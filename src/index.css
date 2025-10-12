@@ -8,89 +8,81 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Brand Colors - Natural Palette */
+    --primary: 132 57% 26%;        /* #2E6221 - Verde profundo */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 132 57% 40%;  /* Verde mais claro para hover */
+    
+    --secondary: 132 61% 6%;       /* #1A400E - Verde escuro */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 131 52% 36%;         /* #2D8A35 - Verde médio */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 105 78% 85%;   /* #C3F1BB - Verde claro suave */
+    
+    /* Neutral & Background */
+    --background: 0 0% 100%;       /* #FFFFFF */
+    --foreground: 132 7% 22%;      /* #343E32 - Texto escuro natural */
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 132 7% 22%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 132 7% 22%;
+    
+    /* UI Elements */
+    --muted: 105 78% 95%;          /* Verde muito claro */
+    --muted-foreground: 132 7% 45%;
+    
+    --border: 105 30% 85%;
+    --input: 105 30% 90%;
+    --ring: 132 57% 26%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --radius: 0.75rem;             /* Bordas mais arredondadas */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(132 57% 26%) 0%, hsl(131 52% 36%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(132 57% 26% / 0.9) 0%, hsl(131 52% 36% / 0.95) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(105 78% 85%) 0%, hsl(105 78% 90%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(132 57% 26% / 0.08);
+    --shadow-md: 0 4px 16px hsl(132 57% 26% / 0.12);
+    --shadow-lg: 0 8px 32px hsl(132 57% 26% / 0.16);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 132 61% 6%;
+    --foreground: 0 0% 95%;
+    
+    --card: 132 57% 10%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 132 57% 10%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 131 52% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 132 57% 15%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --muted: 132 57% 15%;
+    --muted-foreground: 132 7% 65%;
+    
+    --accent: 105 78% 85%;
+    --accent-foreground: 132 57% 10%;
+    
+    --border: 132 57% 20%;
+    --input: 132 57% 20%;
+    --ring: 131 52% 36%;
   }
 }
 
@@ -100,6 +92,83 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  /* Card Styles */
+  .card-nature {
+    @apply bg-card rounded-2xl shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Button Variants via Utilities */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-8 py-4 font-semibold text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .btn-outline-hero {
+    @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary rounded-full px-8 py-4 font-semibold text-lg transition-all duration-300;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

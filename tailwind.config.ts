@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -38,6 +39,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          light: "hsl(var(--accent-light))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -47,16 +49,31 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+      },
+      fontFamily: {
+        heading: ['Roboto', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
+      },
+      fontSize: {
+        'heading-xl': ['56px', { lineHeight: '1.2', fontWeight: '700' }],
+        'heading-l': ['48px', { lineHeight: '1.2', fontWeight: '700' }],
+        'heading-m': ['40px', { lineHeight: '1.3', fontWeight: '700' }],
+        'heading-s': ['24px', { lineHeight: '1.4', fontWeight: '700' }],
+        'heading-xs': ['20px', { lineHeight: '1.4', fontWeight: '700' }],
+        'heading-xxs': ['18px', { lineHeight: '1.5', fontWeight: '400' }],
+        'body-large': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-medium': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-small': ['14px', { lineHeight: '1.6', fontWeight: '400' }],
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-accent': 'var(--gradient-accent)',
+      },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -84,6 +101,13 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fadeIn 0.6s ease-out forwards",
+        "slide-up": "slideUp 0.8s ease-out forwards",
+        "scale-in": "scaleIn 0.5s ease-out forwards",
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
     },
   },
