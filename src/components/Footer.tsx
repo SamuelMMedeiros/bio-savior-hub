@@ -17,7 +17,7 @@ const Footer = () => {
               <span className="text-heading-xs font-bold">BioStats</span>
             </div>
             <p className="text-body-small opacity-90">
-              Educação científica sobre animais peçonhentos para promover práticas ambientalmente responsáveis.
+              Educação científica sobre morcegos para promover práticas ambientalmente responsáveis.
             </p>
           </div>
 

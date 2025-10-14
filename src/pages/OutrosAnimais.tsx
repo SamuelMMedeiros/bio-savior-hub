@@ -5,10 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import AnimalCard from "@/components/AnimalCard";
 import heroImage from "@/assets/hero-forest.jpg";
-import jararacaImage from "@/assets/animal-jararaca.jpg";
-import aranhaImage from "@/assets/animal-aranha.jpg";
-import morcegoImage from "@/assets/animal-morcego.jpg";
-import escorpiaoImage from "@/assets/animal-escorpiao.jpg";
+import jararacaImage from "@/assets/artibeus-lituratus.jfif";
+import aranhaImage from "@/assets/artibeus-lituratus.jfif";
+import morcegoImage from "@/assets/artibeus-lituratus.jfif";
+import escorpiaoImage from "@/assets/artibeus-lituratus.jfif";
+
 
 const OutrosAnimais = () => {
   const [searchTerm, setSearchTerm] = useState("");
