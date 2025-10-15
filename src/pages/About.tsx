@@ -13,13 +13,13 @@ const About = () => {
             icon: Target,
             title: "Missão",
             description:
-                "Promover a educação científica sobre animais peçonhentos, incentivando práticas ambientalmente responsáveis e a conservação da biodiversidade.",
+                "Promover a educação científica sobre morcegos, incentivando práticas ambientalmente responsáveis e a conservação da biodiversidade.",
         },
         {
             icon: Eye,
             title: "Visão",
             description:
-                "Ser referência em informações científicas sobre animais peçonhentos no Brasil, contribuindo para a harmonia entre humanos e natureza.",
+                "Ser referência em informações científicas sobre morcegos em Patos de Minas, contribuindo para a harmonia entre humanos e natureza.",
         },
         {
             icon: Heart,
