@@ -73,7 +73,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-hero" />
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 animate-fade-in">
                     <h1 className="text-heading-xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
-                        Conheça os Morcegogs
+                        Conheça os Morcegos
                         <br />
                         Mais Comuns de Patos de Minas
                     </h1>
