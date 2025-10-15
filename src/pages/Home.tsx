@@ -107,7 +107,7 @@ const Home = () => {
                             </h2>
                             <p className="text-body-large text-muted-foreground mb-4">
                                 O BioStats é dedicado à educação científica
-                                sobre animais peçonhentos, incluindo morcegos,
+                                sobre morcegos,
                                 promovendo o respeito e a conservação da
                                 biodiversidade brasileira.
                             </p>
