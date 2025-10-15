@@ -209,7 +209,7 @@ const Home = () => {
                         Ficou com Alguma Dúvida?
                     </h2>
                     <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
-                        Entre em contato conosco para mais informações sobre
+                        Entre em contato com o CCZ de Patos de Minas para mais informações sobre
                         animais peçonhentos
                     </p>
                     <Link to="/contato">
