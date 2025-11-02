@@ -7,6 +7,7 @@ import soricinaImage from "@/assets/glossophaga-soricina.jfif";
 import artibeusImage from "@/assets/artibeus-lituratus.jfif";
 import desmodusImage from "@/assets/desmodus_rotundus.jfif";
 import morcegoDesmodus from "@/assets/morcego_desmodus_rotundus.jfif";
+
 const Home = () => {
     const featuredAnimals = [
         {
