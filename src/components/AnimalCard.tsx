@@ -7,7 +7,6 @@ interface AnimalCardProps {
     description: string;
     tags: string[];
     location?: string;
-    onClick?: () => void;
 }
 
 const AnimalCard = ({
