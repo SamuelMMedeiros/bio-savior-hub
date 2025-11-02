@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, BookOpen, Users, ArrowRight } from "lucide-react";
+import { Shield, BookOpen, Users, ArrowRight, MapPin, Tag } from "lucide-react"; // Adicionado MapPin e Tag
 import AnimalCard from "@/components/AnimalCard";
 import heroImage from "@/assets/hero-forest.jpg";
 import soricinaImage from "@/assets/glossophaga-soricina.jfif";
 import artibeusImage from "@/assets/artibeus-lituratus.jfif";
 import desmodusImage from "@/assets/desmodus_rotundus.jfif";
 import morcegoDesmodus from "@/assets/morcego_desmodus_rotundus.jfif";
+import {
+    // Componentes do Dialog (Modal)
+    Dialog,
+    DialogTrigger,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+} from "@/components/ui/dialog";
 
 const Home = () => {
     const featuredAnimals = [
@@ -34,7 +43,7 @@ const Home = () => {
             image: soricinaImage,
             description:
                 "Pequeno morcego que se alimenta de néctar e frutas. Polinizador importante.",
-            tags: ["Nectárivoro", "Urbano", "Pequeno","Polinizador"],
+            tags: ["Nectárivoro", "Urbano", "Pequeno", "Polinizador"],
             location: "Áreas urbanas, jardins e quintais. Comum em MG",
         },
     ];
@@ -108,9 +117,8 @@ const Home = () => {
                             </h2>
                             <p className="text-body-large text-muted-foreground mb-4">
                                 O BioStats é dedicado à educação científica
-                                sobre morcegos,
-                                promovendo o respeito e a conservação da
-                                biodiversidade brasileira.
+                                sobre morcegos, promovendo o respeito e a
+                                conservação da biodiversidade brasileira.
                             </p>
                             <p className="text-body-large text-muted-foreground">
                                 Acreditamos que o conhecimento é fundamental
@@ -165,7 +173,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Featured Animals Gallery */}
+            {/* Featured Animals Gallery - MODIFICADO para incluir o Modal */}
             <section className="py-20 bg-muted/30">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12 animate-fade-in">
@@ -173,7 +181,8 @@ const Home = () => {
                             Galeria em Destaque
                         </h2>
                         <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
-                            Conheça algumas das espécies de morcegos mais comuns em Minas Gerais.
+                            Conheça algumas das espécies de morcegos mais comuns
+                            em Minas Gerais.
                         </p>
                     </div>
 
@@ -184,7 +193,74 @@ const Home = () => {
                                 className="animate-scale-in"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
-                                <AnimalCard {...animal} />
+                                {/* INÍCIO DA IMPLEMENTAÇÃO DO MODAL */}
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <AnimalCard {...animal} />
+                                    </DialogTrigger>
+                                    <DialogContent className="sm:max-w-[425px] p-0 overflow-hidden">
+                                        {/* Imagem do Animal no topo */}
+                                        <div className="relative h-60 overflow-hidden">
+                                            <img
+                                                src={animal.image}
+                                                alt={animal.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                        </div>
+
+                                        <div className="p-6 pt-0 space-y-4">
+                                            <DialogHeader>
+                                                <DialogTitle className="text-primary text-3xl font-bold">
+                                                    {animal.name}
+                                                </DialogTitle>
+                                                <DialogDescription className="text-body-large text-muted-foreground pt-2">
+                                                    {animal.description}
+                                                </DialogDescription>
+                                            </DialogHeader>
+
+                                            {/* Localização */}
+                                            {animal.location && (
+                                                <div className="flex items-center gap-2 text-body-medium text-muted-foreground border-t pt-4">
+                                                    <MapPin className="w-5 h-5 text-accent" />
+                                                    <span className="font-semibold">
+                                                        Localização:
+                                                    </span>
+                                                    <span>
+                                                        {animal.location}
+                                                    </span>
+                                                </div>
+                                            )}
+
+                                            {/* Tags/Detalhes Adicionais */}
+                                            <div className="flex items-start gap-2 pt-2 border-t flex-wrap">
+                                                <Tag className="w-5 h-5 text-accent self-start mt-0.5" />
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="font-semibold text-body-medium text-muted-foreground mr-1">
+                                                        Características:
+                                                    </span>
+                                                    {animal.tags.map((tag) => (
+                                                        <span
+                                                            key={tag}
+                                                            className="px-3 py-1 bg-accent-light text-accent rounded-full text-body-small font-medium"
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            <div className="pt-4 border-t">
+                                                <p className="text-body-small text-muted-foreground">
+                                                    Para mais informações e
+                                                    manejo, entre em contato com
+                                                    o CCZ local.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
+                                {/* FIM DA IMPLEMENTAÇÃO DO MODAL */}
                             </div>
                         ))}
                     </div>
@@ -210,8 +286,8 @@ const Home = () => {
                         Ficou com Alguma Dúvida?
                     </h2>
                     <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
-                        Entre em contato com o CCZ de Patos de Minas para mais informações sobre
-                        animais peçonhentos
+                        Entre em contato com o CCZ de Patos de Minas para mais
+                        informações sobre animais peçonhentos
                     </p>
                     <Link to="/contato">
                         <Button
