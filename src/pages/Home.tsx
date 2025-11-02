@@ -1,5 +1,3 @@
-// src/pages/Home.tsx
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,7 +29,9 @@ import {
 } from "@/components/ui/dialog";
 
 // Mapeamento de chaves para títulos amigáveis e ícones no modal
-const FEATURE_MAP = {
+const FEATURE_MAP: {
+    [key: string]: { title: string; icon: React.ElementType; color: string };
+} = {
     feeding: { title: "Alimentação", icon: Leaf, color: "text-green-600" },
     body: {
         title: "Características do Corpo",
@@ -56,15 +56,14 @@ const FEATURE_MAP = {
 };
 
 const Home = () => {
-    // CORREÇÃO: Dados completos para todos os cards
     const featuredAnimals = [
         {
             id: 1,
             name: "Morcego-de-cauda-livre",
-            cientificName: "Eumops glaucinus", // NOVO
+            cientificName: "Eumops glaucinus",
             image: desmodusImage,
             description:
-                "Morcego insetívoro conhecido por seu voo alto e rápido.",
+                "Morcego insetívoro conhecido por seu voo alto e rápido. Controla populações de insetos.",
             descriptionFull: {
                 feeding: "Insetos",
                 body: [
@@ -93,10 +92,10 @@ const Home = () => {
         {
             id: 2,
             name: "Morcego-das-frutas",
-            cientificName: "Artibeus lituratus", // NOVO
+            cientificName: "Artibeus lituratus",
             image: artibeusImage,
             description:
-                "Morcego frugívoro de grande porte, ajuda na dispersão de sementes.",
+                "Morcego frugívoro de grande porte, ajuda na dispersão de sementes e polinização.",
             descriptionFull: {
                 feeding: "Frutas e néctar",
                 body: [
@@ -105,14 +104,15 @@ const Home = () => {
                     "Manchas brancas na face",
                 ],
                 behavior: [
-                    "Noturno",
+                    "Noturno e sociável",
                     "Vive em árvores e telhados",
                     "Tolerante a ruído",
                 ],
                 importance:
-                    "Dispersor de sementes de frutas nativas e polinizador",
+                    "Dispersor de sementes de frutas nativas e polinizador de grande alcance",
                 curiosities: [
-                    "Causa prejuízos em pomares se houver superpopulação",
+                    "É um dos morcegos mais adaptáveis ao ambiente urbano",
+                    "Sua dieta variada contribui para a regeneração florestal",
                 ],
             },
             tags: ["Frugívoro", "Urbano", "Polinizador"],
@@ -121,25 +121,26 @@ const Home = () => {
         {
             id: 3,
             name: "Morcego-beija-flor",
-            cientificName: "Glossophaga soricina", // NOVO
+            cientificName: "Glossophaga soricina",
             image: soricinaImage,
             description:
-                "Pequeno morcego que se alimenta de néctar e frutas. Polinizador importante.",
+                "Pequeno morcego que se alimenta de néctar e frutas. Vital para a polinização de muitas plantas.",
             descriptionFull: {
                 feeding: "Néctar e pólen",
                 body: [
                     "Pequeno porte (5-7 cm)",
                     "Focinho longo",
-                    "Língua longa e fina",
+                    "Língua longa e fina para alcançar o néctar",
                 ],
                 behavior: [
-                    "Ativo em jardins",
-                    "Voa rápido e paira como beija-flor",
+                    "Muito ativo em jardins",
+                    "Voa rápido e paira no ar ao se alimentar, como um beija-flor",
                 ],
                 importance:
-                    "Polinizador de plantas com flores noturnas, como o pequi",
+                    "Polinizador essencial de plantas com flores noturnas, incluindo algumas culturas agrícolas",
                 curiosities: [
                     "Seu nome vem da semelhança com o beija-flor ao se alimentar",
+                    "Capaz de consumir o seu peso em néctar por noite",
                 ],
             },
             tags: ["Nectárivoro", "Urbano", "Pequeno", "Polinizador"],
@@ -148,17 +149,142 @@ const Home = () => {
     ];
 
     const services = [
-        // ... (seção services permanece a mesma)
+        {
+            icon: Shield,
+            title: "Informação Confiável",
+            description:
+                "Dados científicos verificados sobre animais peçonhentos e seus habitats.",
+        },
+        {
+            icon: BookOpen,
+            title: "Educação Ambiental",
+            description:
+                "Conteúdo educativo para promover práticas sustentáveis e conscientes.",
+        },
+        {
+            icon: Users,
+            title: "Comunidade Engajada",
+            description:
+                "Conectamos pessoas interessadas em conservação e biodiversidade.",
+        },
     ];
 
     return (
         <div className="min-h-screen">
-            {/* ... Hero Section e About Section permanecem as mesmas ... */}
+            {/* Hero Section */}
+            <section
+                className="relative h-[600px] flex items-center justify-center text-center overflow-hidden"
+                style={{
+                    backgroundImage: `url(${heroImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+            >
+                <div className="absolute inset-0 bg-gradient-hero" />
+                <div className="relative z-10 container mx-auto px-4 sm:px-6 animate-fade-in">
+                    <h1 className="text-heading-xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
+                        Conheça os Morcegos
+                        <br />
+                        Mais Comuns de Patos de Minas
+                    </h1>
+                    <p className="text-body-large md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                        Informações científicas confiáveis para promover a
+                        convivência harmoniosa com a natureza
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link to="/outros-animais">
+                            <Button className="btn-hero">
+                                Explorar Galeria
+                                <ArrowRight className="ml-2 w-5 h-5" />
+                            </Button>
+                        </Link>
+                        <Link to="/sobre">
+                            <Button className="btn-outline-hero">
+                                Saiba Mais
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* About Section */}
+            <section className="py-20 bg-accent-light/30">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="animate-slide-up">
+                            <h2 className="text-heading-l text-primary mb-6">
+                                Nossa Missão
+                            </h2>
+                            <p className="text-body-large text-muted-foreground mb-4">
+                                O BioStats é dedicado à educação científica
+                                sobre morcegos, promovendo o respeito e a
+                                conservação da biodiversidade brasileira.
+                            </p>
+                            <p className="text-body-large text-muted-foreground">
+                                Acreditamos que o conhecimento é fundamental
+                                para a convivência harmoniosa entre humanos e a
+                                fauna nativa, contribuindo para práticas
+                                ambientalmente responsáveis.
+                            </p>
+                        </div>
+                        <div className="animate-scale-in">
+                            <img
+                                src={morcegoDesmodus}
+                                alt="Escorpião"
+                                className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Services Section */}
+            <section className="py-20">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-12 animate-fade-in">
+                        <h2 className="text-heading-l text-primary mb-4">
+                            Nossos Serviços
+                        </h2>
+                        <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
+                            Oferecemos informações científicas e educação
+                            ambiental de qualidade
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {services.map((service, index) => (
+                            <div
+                                key={index}
+                                className="card-nature p-8 text-center hover-lift animate-scale-in"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                                <div className="inline-flex p-4 bg-accent-light rounded-2xl mb-4">
+                                    <service.icon className="w-8 h-8 text-accent" />
+                                </div>
+                                <h3 className="text-heading-xs mb-3">
+                                    {service.title}
+                                </h3>
+                                <p className="text-body-medium text-muted-foreground">
+                                    {service.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* Featured Animals Gallery - MODIFICADO para incluir o Modal com detalhes completos */}
             <section className="py-20 bg-muted/30">
                 <div className="container mx-auto px-4 sm:px-6">
-                    {/* ... Títulos da seção permanecem os mesmos ... */}
+                    <div className="text-center mb-12 animate-fade-in">
+                        <h2 className="text-heading-l text-primary mb-4">
+                            Galeria em Destaque
+                        </h2>
+                        <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
+                            Conheça algumas das espécies de morcegos mais comuns
+                            em Minas Gerais.
+                        </p>
+                    </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                         {featuredAnimals.map((animal, index) => (
@@ -167,6 +293,7 @@ const Home = () => {
                                 className="animate-scale-in"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
+                                {/* ESTRUTURA DO MODAL */}
                                 <Dialog>
                                     <DialogTrigger asChild>
                                         <AnimalCard {...animal} />
@@ -186,8 +313,7 @@ const Home = () => {
                                             <DialogHeader className="pt-4">
                                                 {/* Título: Nome Científico */}
                                                 <DialogTitle className="text-primary text-3xl font-bold italic">
-                                                    {animal.cientificName ||
-                                                        animal.name}
+                                                    {animal.cientificName}
                                                 </DialogTitle>
                                                 {/* Subtítulo: Nome Comum */}
                                                 <DialogDescription className="text-heading-xs text-muted-foreground pt-1">
@@ -210,31 +336,20 @@ const Home = () => {
                                                         if (!value) return null;
 
                                                         const feature =
-                                                            FEATURE_MAP[
-                                                                key as keyof typeof FEATURE_MAP
-                                                            ];
+                                                            FEATURE_MAP[key];
+                                                        const IconComponent =
+                                                            feature.icon;
 
                                                         return (
                                                             <div key={key}>
                                                                 {/* Título da Seção (ex: Alimentação) */}
                                                                 <h3
-                                                                    className={`flex items-center gap-2 text-heading-xs font-semibold ${
-                                                                        feature?.color ||
-                                                                        "text-primary"
-                                                                    } mb-2`}
+                                                                    className={`flex items-center gap-2 text-heading-xs font-semibold ${feature.color} mb-2`}
                                                                 >
-                                                                    {feature?.icon && (
-                                                                        <feature.icon className="w-5 h-5" />
-                                                                    )}
-                                                                    {feature?.title ||
-                                                                        key
-                                                                            .charAt(
-                                                                                0
-                                                                            )
-                                                                            .toUpperCase() +
-                                                                            key.slice(
-                                                                                1
-                                                                            )}
+                                                                    <IconComponent className="w-5 h-5" />
+                                                                    {
+                                                                        feature.title
+                                                                    }
                                                                 </h3>
 
                                                                 {/* Conteúdo da Seção */}
@@ -313,14 +428,46 @@ const Home = () => {
                                         </div>
                                     </DialogContent>
                                 </Dialog>
+                                {/* FIM DA IMPLEMENTAÇÃO DO MODAL */}
                             </div>
                         ))}
                     </div>
-                    {/* ... Restante do código da seção ... */}
+
+                    <div className="text-center">
+                        <Link to="/outros-animais">
+                            <Button
+                                size="lg"
+                                className="rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90"
+                            >
+                                Veja mais
+                                <ArrowRight className="ml-2 w-5 h-5" />
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             </section>
 
-            {/* ... CTA Section permanece a mesma ... */}
+            {/* CTA Section */}
+            <section className="py-20 bg-gradient-primary text-primary-foreground">
+                <div className="container mx-auto px-4 sm:px-6 text-center animate-fade-in">
+                    <h2 className="text-heading-l mb-4">
+                        Ficou com Alguma Dúvida?
+                    </h2>
+                    <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
+                        Entre em contato com o CCZ de Patos de Minas para mais
+                        informações sobre animais peçonhentos
+                    </p>
+                    <Link to="/contato">
+                        <Button
+                            size="lg"
+                            variant="secondary"
+                            className="rounded-full"
+                        >
+                            Enviar Mensagem
+                        </Button>
+                    </Link>
+                </div>
+            </section>
         </div>
     );
 };
