@@ -74,9 +74,9 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-hero" />
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 animate-fade-in">
                     <h1 className="text-heading-xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
-                        Conheça os Animais
+                        Conheça os Morcegos
                         <br />
-                        Peçonhentos do Brasil
+                        Mais Comuns de Patos de Minas
                     </h1>
                     <p className="text-body-large md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                         Informações científicas confiáveis para promover a
@@ -108,7 +108,7 @@ const Home = () => {
                             </h2>
                             <p className="text-body-large text-muted-foreground mb-4">
                                 O BioStats é dedicado à educação científica
-                                sobre animais peçonhentos, incluindo morcegos,
+                                sobre morcegos,
                                 promovendo o respeito e a conservação da
                                 biodiversidade brasileira.
                             </p>
@@ -210,7 +210,7 @@ const Home = () => {
                         Ficou com Alguma Dúvida?
                     </h2>
                     <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
-                        Entre em contato conosco para mais informações sobre
+                        Entre em contato com o CCZ de Patos de Minas para mais informações sobre
                         animais peçonhentos
                     </p>
                     <Link to="/contato">
