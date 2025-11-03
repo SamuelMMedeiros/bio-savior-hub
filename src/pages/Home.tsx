@@ -15,10 +15,10 @@ import {
 } from "lucide-react";
 import AnimalCard from "@/components/AnimalCard";
 import heroImage from "@/assets/hero-forest.jpg";
-import soricinaImage from "@/assets/glossophaga-soricina.jfif";
 import artibeusImage from "@/assets/artibeus-lituratus.jfif";
-import desmodusImage from "@/assets/desmodus_rotundus.jfif";
-import morcegoDesmodus from "@/assets/morcego_desmodus_rotundus.jfif";
+import eumopsImage from "@/assets/Eumops glaucinus.jpeg";
+import laticaudatusImage from "@/assets/Nyctinomops laticaudatus.jpeg";
+import bannerImage from "@/assets/banner.jpeg";
 import {
     // Componentes do Dialog (Modal)
     Dialog,
@@ -63,11 +63,12 @@ const FEATURE_MAP: {
 
 const Home = () => {
     const featuredAnimals = [
+        // 1. Eumops glaucinus (Morcego-de-cauda-livre)
         {
             id: 1,
             name: "Morcego-de-cauda-livre",
             cientificName: "Eumops glaucinus",
-            image: desmodusImage,
+            image: eumopsImage,
             description:
                 "Morcego insetívoro conhecido por seu voo alto e rápido. Controla populações de insetos.",
             descriptionFull: {
@@ -96,64 +97,70 @@ const Home = () => {
             tags: ["Insetívoro", "Urbano", "Voo rápido"],
             location: "Áreas urbanas e periurbanas de MG",
         },
+        // 2. Nyctinomops laticaudatus (Morcego-de-cauda-larga)
         {
             id: 2,
+            name: "Morcego-de-cauda-larga",
+            cientificName: "Nyctinomops laticaudatus",
+            image: laticaudatusImage,
+            description:
+                "Morcego insetívoro encontrado em diversos habitats, desde florestas até áreas urbanas.",
+            descriptionFull: {
+                feeding:
+                    "Insetívoro, alimenta-se principalmente de besouros e mariposas",
+                body: [
+                    "Corpo castanho escuro com asas translúcidas",
+                    "Focinho pontiagudo com a ponta voltada para cima",
+                    "Orelhas excepcionalmente largas e arredondadas, que se juntam no meio da testa",
+                ],
+                behavior: [
+                    "Noturno e vive em grupos compactados",
+                    "Abriga-se em fendas rochosas ou cavernas, com colônias de 150 a vários milhares de indivíduos",
+                    "Reprodução ocorre na estação das chuvas",
+                ],
+                importance: "Controle de pragas agrícolas e insetos voadores",
+                curiosities: [
+                    "Pertence à família Molossidae, conhecida por morcegos de voo rápido",
+                    "Mais comum abaixo de 500 metros de elevação",
+                ],
+                attacks: "13 casos registrados",
+            },
+            tags: ["Insetívoro", "Social", "Cavernícola"],
+            location:
+                "América Central e do Sul, comum em florestas, cerrado e áreas urbanas",
+        },
+        // 3. Artibeus lituratus (Morcego-das-frutas)
+        {
+            id: 3,
             name: "Morcego-das-frutas",
             cientificName: "Artibeus lituratus",
             image: artibeusImage,
             description:
-                "Morcego frugívoro de grande porte, ajuda na dispersão de sementes e polinização.",
+                "Um dos maiores morcegos frugívoros do Brasil, vital para a dispersão de sementes e regeneração florestal.",
             descriptionFull: {
-                feeding: "Frutas e néctar",
+                feeding:
+                    "Frugívoro (81 a 88% da dieta), se alimentando de frutas de várias árvores",
                 body: [
-                    "Grande porte (15-20 cm)",
-                    "Pelagem marrom-escura",
-                    "Manchas brancas na face",
+                    "Grande porte (44 a 87 gramas); um dos maiores morcegos brasileiros",
+                    "Coloração marrom-chocolate ou acinzentada",
+                    "Listras faciais características do gênero, mas menos evidentes",
                 ],
                 behavior: [
-                    "Noturno e sociável",
-                    "Vive em árvores e telhados",
-                    "Tolerante a ruído",
+                    "Noturno",
+                    "Voa ao redor da fruta, morde e executa movimento de torção para removê-la",
+                    "Pode se alimentar de 2 a 5 árvores frutíferas em uma noite",
                 ],
                 importance:
-                    "Dispersor de sementes de frutas nativas e polinizador de grande alcance",
+                    "Dispersor de sementes crucial na regeneração florestal e polinizador",
                 curiosities: [
-                    "É um dos morcegos mais adaptáveis ao ambiente urbano",
-                    "Sua dieta variada contribui para a regeneração florestal",
+                    "Pode atingir até 30 anos em ambiente natural",
+                    "Comum em áreas urbanas e de Mata Atlântica",
                 ],
-                attacks: "20 casos registrados",
+                attacks: "2 casos registrados",
             },
-            tags: ["Frugívoro", "Urbano", "Polinizador"],
-            location: "Regiões urbanas, praças, quintais e telhados",
-        },
-        {
-            id: 3,
-            name: "Morcego-beija-flor",
-            cientificName: "Glossophaga soricina",
-            image: soricinaImage,
-            description:
-                "Pequeno morcego que se alimenta de néctar e frutas. Vital para a polinização de muitas plantas.",
-            descriptionFull: {
-                feeding: "Néctar e pólen",
-                body: [
-                    "Pequeno porte (5-7 cm)",
-                    "Focinho longo",
-                    "Língua longa e fina para alcançar o néctar",
-                ],
-                behavior: [
-                    "Muito ativo em jardins",
-                    "Voa rápido e paira no ar ao se alimentar, como um beija-flor",
-                ],
-                importance:
-                    "Polinizador essencial de plantas com flores noturnas, incluindo algumas culturas agrícolas",
-                curiosities: [
-                    "Seu nome vem da semelhança com o beija-flor ao se alimentar",
-                    "Capaz de consumir o seu peso em néctar por noite",
-                ],
-                attacks: "20 casos registrados",
-            },
-            tags: ["Nectárivoro", "Urbano", "Pequeno", "Polinizador"],
-            location: "Áreas urbanas, jardins e quintais. Comum em MG",
+            tags: ["Frugívoro", "Urbano", "Dispersor de sementes"],
+            location:
+                "Desde o México até o sul do Brasil, comum em áreas urbanas",
         },
     ];
 
@@ -238,7 +245,7 @@ const Home = () => {
                         </div>
                         <div className="animate-scale-in">
                             <img
-                                src={morcegoDesmodus}
+                                src={bannerImage}
                                 alt="Escorpião"
                                 className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
                             />
@@ -282,7 +289,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Featured Animals Gallery - MODIFICADO para incluir o Modal com detalhes completos */}
+            {/* Featured Animals Gallery*/}
             <section className="py-20 bg-muted/30">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12 animate-fade-in">
