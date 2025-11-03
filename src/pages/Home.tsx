@@ -11,6 +11,7 @@ import {
     BrainIcon,
     Leaf,
     StarIcon,
+    BookCheck,
 } from "lucide-react";
 import AnimalCard from "@/components/AnimalCard";
 import heroImage from "@/assets/hero-forest.jpg";
@@ -53,6 +54,11 @@ const FEATURE_MAP: {
         icon: BookOpen,
         color: "text-red-600",
     },
+    attacks: {
+        title: "Casos registrados",
+        icon: BookCheck,
+        color: "text-orange-600",
+    },
 };
 
 const Home = () => {
@@ -85,6 +91,7 @@ const Home = () => {
                     "Pode formar grupos grandes em estruturas altas",
                     "Voa tão alto que às vezes é confundido com andorinhas ao entardecer",
                 ],
+                attacks: "20 casos registrados",
             },
             tags: ["Insetívoro", "Urbano", "Voo rápido"],
             location: "Áreas urbanas e periurbanas de MG",
@@ -114,6 +121,7 @@ const Home = () => {
                     "É um dos morcegos mais adaptáveis ao ambiente urbano",
                     "Sua dieta variada contribui para a regeneração florestal",
                 ],
+                attacks: "20 casos registrados",
             },
             tags: ["Frugívoro", "Urbano", "Polinizador"],
             location: "Regiões urbanas, praças, quintais e telhados",
@@ -142,6 +150,7 @@ const Home = () => {
                     "Seu nome vem da semelhança com o beija-flor ao se alimentar",
                     "Capaz de consumir o seu peso em néctar por noite",
                 ],
+                attacks: "20 casos registrados",
             },
             tags: ["Nectárivoro", "Urbano", "Pequeno", "Polinizador"],
             location: "Áreas urbanas, jardins e quintais. Comum em MG",
@@ -310,8 +319,10 @@ const Home = () => {
                                         </div>
 
                                         <div className="p-6 pt-0 space-y-6">
+                                            {" "}
+                                            {/* Espaçamento principal padronizado */}
                                             <DialogHeader className="pt-4">
-                                                {/* Título: Nome Científico */}
+                                                {/* Título: Nome Científico (Itálico) */}
                                                 <DialogTitle className="text-primary text-3xl font-bold italic">
                                                     {animal.cientificName}
                                                 </DialogTitle>
@@ -320,74 +331,92 @@ const Home = () => {
                                                     {animal.name}
                                                 </DialogDescription>
                                             </DialogHeader>
-
                                             {/* Informação Resumida - descrição original do card */}
                                             <p className="text-body-large text-muted-foreground">
                                                 {animal.description}
                                             </p>
-
-                                            {/* DETALHES COMPLETOS (descriptionFull) */}
+                                            {/* DETALHES COMPLETOS (descriptionFull) - Bloco Destacado */}
                                             {animal.descriptionFull && (
-                                                <div className="space-y-6 pt-4 border-t">
+                                                <div className="space-y-6 pt-4 border-t bg-muted/50 p-4 rounded-lg">
                                                     {Object.entries(
                                                         animal.descriptionFull
-                                                    ).map(([key, value]) => {
-                                                        // Ignora se não houver valor
-                                                        if (!value) return null;
+                                                    ).map(
+                                                        ([key, value], idx) => {
+                                                            // Ignora se não houver valor
+                                                            if (!value)
+                                                                return null;
 
-                                                        const feature =
-                                                            FEATURE_MAP[key];
-                                                        const IconComponent =
-                                                            feature.icon;
+                                                            const feature =
+                                                                FEATURE_MAP[
+                                                                    key
+                                                                ];
+                                                            const IconComponent =
+                                                                feature.icon;
 
-                                                        return (
-                                                            <div key={key}>
-                                                                {/* Título da Seção (ex: Alimentação) */}
-                                                                <h3
-                                                                    className={`flex items-center gap-2 text-heading-xs font-semibold ${feature.color} mb-2`}
-                                                                >
-                                                                    <IconComponent className="w-5 h-5" />
-                                                                    {
-                                                                        feature.title
+                                                            // Estilo para separar cada tópico
+                                                            const isLastItem =
+                                                                idx ===
+                                                                Object.entries(
+                                                                    animal.descriptionFull
+                                                                ).length -
+                                                                    1;
+
+                                                            return (
+                                                                <div
+                                                                    key={key}
+                                                                    className={
+                                                                        !isLastItem
+                                                                            ? "pb-4 border-b border-muted"
+                                                                            : "pb-0"
                                                                     }
-                                                                </h3>
+                                                                >
+                                                                    {/* Título da Seção (ex: Alimentação) - Maior Ênfase */}
+                                                                    <h3
+                                                                        className={`flex items-center gap-2 text-lg font-bold ${feature.color} mb-3`}
+                                                                    >
+                                                                        <IconComponent className="w-5 h-5" />
+                                                                        {
+                                                                            feature.title
+                                                                        }
+                                                                    </h3>
 
-                                                                {/* Conteúdo da Seção */}
-                                                                {Array.isArray(
-                                                                    value
-                                                                ) ? (
-                                                                    // Se for um array, renderiza como lista (ul > li)
-                                                                    <ul className="text-body-medium text-muted-foreground space-y-1 list-disc pl-5">
-                                                                        {value.map(
-                                                                            (
-                                                                                item,
-                                                                                i
-                                                                            ) => (
-                                                                                <li
-                                                                                    key={
-                                                                                        i
-                                                                                    }
-                                                                                    className="pl-1"
-                                                                                >
-                                                                                    {
-                                                                                        item
-                                                                                    }
-                                                                                </li>
-                                                                            )
-                                                                        )}
-                                                                    </ul>
-                                                                ) : (
-                                                                    // Se for string simples, renderiza como parágrafo
-                                                                    <p className="text-body-medium text-muted-foreground ml-7">
-                                                                        {value}
-                                                                    </p>
-                                                                )}
-                                                            </div>
-                                                        );
-                                                    })}
+                                                                    {/* Conteúdo da Seção */}
+                                                                    {Array.isArray(
+                                                                        value
+                                                                    ) ? (
+                                                                        // Se for um array, renderiza como lista (ul > li)
+                                                                        <ul className="text-body-medium text-muted-foreground space-y-1 list-disc pl-8">
+                                                                            {value.map(
+                                                                                (
+                                                                                    item,
+                                                                                    i
+                                                                                ) => (
+                                                                                    <li
+                                                                                        key={
+                                                                                            i
+                                                                                        }
+                                                                                    >
+                                                                                        {
+                                                                                            item
+                                                                                        }
+                                                                                    </li>
+                                                                                )
+                                                                            )}
+                                                                        </ul>
+                                                                    ) : (
+                                                                        // Se for string simples, renderiza como parágrafo
+                                                                        <p className="text-body-medium text-muted-foreground pl-7">
+                                                                            {
+                                                                                value
+                                                                            }
+                                                                        </p>
+                                                                    )}
+                                                                </div>
+                                                            );
+                                                        }
+                                                    )}
                                                 </div>
                                             )}
-
                                             {/* Localização e Tags - Reorganizados para o final */}
                                             {animal.location && (
                                                 <div className="flex items-center gap-2 text-body-medium text-muted-foreground border-t pt-4">
@@ -400,7 +429,6 @@ const Home = () => {
                                                     </span>
                                                 </div>
                                             )}
-
                                             <div className="flex items-start gap-2 pt-2 border-t flex-wrap">
                                                 <Tag className="w-5 h-5 text-accent self-start mt-0.5" />
                                                 <div className="flex flex-wrap gap-2">
@@ -417,7 +445,6 @@ const Home = () => {
                                                     ))}
                                                 </div>
                                             </div>
-
                                             <div className="pt-4 border-t">
                                                 <p className="text-body-small text-muted-foreground">
                                                     Para mais informações e
