@@ -470,7 +470,7 @@ const OutrosAnimais = () => {
 
                     <div className="rounded-2xl overflow-hidden shadow-lg h-[500px] animate-scale-in">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776526.879219813!2d-55.491477!3d-14.235004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2sBrasil!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.174562724508!2d-46.515188725985794!3d-18.566167197290277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8b336d9068c1%3A0xce40462b1302bffb!2sCentro%20de%20Controle%20de%20Zoonoses!5e0!3m2!1spt-BR!2sbr!4v1762138346175!5m2!1spt-BR!2sbr"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
