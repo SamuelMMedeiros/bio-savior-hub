@@ -17,8 +17,8 @@ interface AttackChartProps {
 
 export function AttackChart({ data }: AttackChartProps) {
     return (
-        <div style={{ width: "100%", height: 300 }}>
-            <ResponsiveContainer>
+        <div className="w-full h-[300px] max-w-full mx-auto sm:max-w-none sm:mx-0">
+            <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data}>
                     <CartesianGrid horizontal={false} vertical={false} />
                     <XAxis dataKey="bairro" />
