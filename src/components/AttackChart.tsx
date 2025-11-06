@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import {
     BarChart,
@@ -24,7 +25,6 @@ export function AttackChart({ data }: AttackChartProps) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const CustomTooltip = ({ active, payload }: any) => {
         if (active && payload && payload.length) {
             const item = payload[0].payload;
@@ -54,15 +54,12 @@ export function AttackChart({ data }: AttackChartProps) {
                     {!isMobile && <XAxis dataKey="bairro" />}
                     <YAxis />
                     <Tooltip
-                        cursor={{ fill: "rgba(0,0,0,0.05)" }}
                         content={<CustomTooltip />}
-                        wrapperStyle={{
-                            visibility: isMobile ? "visible" : "hidden",
-                            pointerEvents: "none",
-                        }}
+                        cursor={{ fill: "rgba(0,0,0,0.05)" }}
                     />
                     <Bar
                         dataKey="ataques"
+                        name="Ataques"
                         fill="#4f46e5"
                         radius={[6, 6, 0, 0]}
                     />
