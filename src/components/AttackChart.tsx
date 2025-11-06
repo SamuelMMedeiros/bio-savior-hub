@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import {
     BarChart,
     Bar,
@@ -15,11 +15,12 @@ interface AttackChartProps {
 }
 
 export function AttackChart({ data }: AttackChartProps) {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== "undefined" ? window.innerWidth < 640 : false
+    );
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 640);
-        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -28,7 +29,7 @@ export function AttackChart({ data }: AttackChartProps) {
         if (active && payload && payload.length) {
             const item = payload[0].payload;
             return (
-                <div className="bg-white border border-green-200 rounded-lg p-2 shadow-sm text-sm">
+                <div className="bg-white border border-green-200 rounded-lg p-2 shadow-sm text-sm animate-fade-in">
                     <p className="font-medium text-green-900">{item.bairro}</p>
                     <p className="text-green-700">Ataques: {item.ataques}</p>
                 </div>
@@ -55,7 +56,7 @@ export function AttackChart({ data }: AttackChartProps) {
                         <YAxis />
                         <Tooltip
                             content={<CustomTooltip />}
-                            cursor={{ fill: "rgba(0,128,0,0.05)" }}
+                            cursor={{ fill: "rgba(34,197,94,0.08)" }}
                         />
                         <Bar
                             dataKey="ataques"
@@ -68,7 +69,7 @@ export function AttackChart({ data }: AttackChartProps) {
             </div>
 
             {isMobile && (
-                <p className="text-sm text-muted-foreground mt-2 text-center px-4">
+                <p className="text-sm text-muted-foreground mt-2 text-center px-4 animate-fade-in">
                     Toque ou arraste o dedo sobre as barras para ver o bairro e
                     o número de ataques.
                 </p>
