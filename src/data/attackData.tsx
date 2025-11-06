@@ -76,7 +76,7 @@ export const ATTACK_DATA: AttackData[] = [
     },
     {
         id: 8,
-        bairro: "Cristo Redentor",
+        bairro: "C. Redentor",
         ataques: 2,
         lat: -18.585,
         lng: -46.51,
@@ -85,7 +85,7 @@ export const ATTACK_DATA: AttackData[] = [
     },
     {
         id: 9,
-        bairro: "Nossa Senhora de Fátima",
+        bairro: "N.S. de Fátima",
         ataques: 2,
         lat: -18.573,
         lng: -46.505,

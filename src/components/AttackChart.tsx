@@ -19,8 +19,10 @@ export function AttackChart({ data }: AttackChartProps) {
     return (
         <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer>
-                <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
+                <BarChart
+                data={data}
+                margin={{top: 10, right: 10, bottom: 10, left: 10}}>
+                    <CartesianGrid horizontal={false} vertical={false} />
                     <XAxis dataKey="bairro" />
                     <YAxis />
                     <Tooltip />
