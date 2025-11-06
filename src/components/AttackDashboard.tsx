@@ -21,7 +21,7 @@ export function AttackDashboard() {
                     onBairroClick={handleBairroClick}
                 />
             </div>
-            <div className="h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow">
+            <div className="h-[400px] md:flex-row md:h-[500px] rounded-lg overflow-hidden shadow">
                 <AttackMap center={selectedBairro} />
             </div>
         </div>

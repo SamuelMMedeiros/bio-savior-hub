@@ -1,4 +1,4 @@
-import { Target, Eye, Heart, Users, Award, Clock } from "lucide-react";
+import { Target, Eye, Heart, Users, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-forest.jpg";
 import mirianImage from "@/assets/user_pics/Mirian.jfif";
@@ -26,29 +26,6 @@ const About = () => {
             title: "Valores",
             description:
                 "Ciência, respeito pela natureza, educação acessível, conservação ambiental e responsabilidade socioambiental.",
-        },
-    ];
-
-    const timeline = [
-        {
-            year: "2020",
-            event: "Fundação do BioStats com foco em educação ambiental",
-        },
-        {
-            year: "2021",
-            event: "Lançamento da plataforma digital e galeria de animais",
-        },
-        {
-            year: "2022",
-            event: "Parceria com instituições de pesquisa científica",
-        },
-        {
-            year: "2023",
-            event: "Expansão do banco de dados com mais de 100 espécies catalogadas",
-        },
-        {
-            year: "2024",
-            event: "Reconhecimento como referência em educação sobre animais peçonhentos",
         },
     ];
 
@@ -182,47 +159,6 @@ const About = () => {
                                     </p>
                                 </CardContent>
                             </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Timeline */}
-            <section className="py-20">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="text-center mb-12 animate-fade-in">
-                        <h2 className="text-heading-l text-primary mb-4">
-                            Nossa História
-                        </h2>
-                        <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
-                            Uma jornada de crescimento e dedicação à educação
-                            ambiental
-                        </p>
-                    </div>
-
-                    <div className="max-w-3xl mx-auto space-y-8">
-                        {timeline.map((item, index) => (
-                            <div
-                                key={index}
-                                className="flex gap-6 items-start animate-slide-up"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                                <div className="flex-shrink-0 w-20 text-center">
-                                    <div className="inline-flex p-3 bg-accent-light rounded-xl">
-                                        <Clock className="w-6 h-6 text-accent" />
-                                    </div>
-                                    <p className="text-heading-xs text-primary mt-2 font-bold">
-                                        {item.year}
-                                    </p>
-                                </div>
-                                <Card className="flex-1 border-0 shadow-md">
-                                    <CardContent className="p-6">
-                                        <p className="text-body-medium">
-                                            {item.event}
-                                        </p>
-                                    </CardContent>
-                                </Card>
-                            </div>
                         ))}
                     </div>
                 </div>

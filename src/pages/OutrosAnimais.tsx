@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import {
     BookOpen,
     MapPin,
@@ -8,6 +9,7 @@ import {
     Leaf,
     StarIcon,
     BookCheck,
+    Clock,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -229,6 +231,29 @@ const OutrosAnimais = () => {
         {
             question: "Como identificar uma serpente peçonhenta?",
             answer: "Serpentes peçonhentas geralmente têm cabeça triangular, fosseta loreal (entre olho e narina), pupilas em fenda vertical e comportamento defensivo. Em caso de dúvida, mantenha distância.",
+        },
+    ];
+
+    const timeline = [
+        {
+            year: "2021",
+            event: "31 casos registrados",
+        },
+        {
+            year: "2022",
+            event: "12 casos registrados",
+        },
+        {
+            year: "2023",
+            event: "7 casos registrados",
+        },
+        {
+            year: "2024",
+            event: "1 caso registrado",
+        },
+        {
+            year: "2025",
+            event: "17 casos registrados",
         },
     ];
 
@@ -454,6 +479,47 @@ const OutrosAnimais = () => {
                             {/* FIM DA IMPLEMENTAÇÃO DO MODAL */}
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* Timeline */}
+            <section className="py-20">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-12 animate-fade-in">
+                        <h2 className="text-heading-l text-primary mb-4">
+                            Evolução Temporal
+                        </h2>
+                        <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
+                            Casos anuais de morcegos em Patos de Minas
+                            (2021-2025)
+                        </p>
+                    </div>
+
+                    <div className="max-w-3xl mx-auto space-y-8">
+                        {timeline.map((item, index) => (
+                            <div
+                                key={index}
+                                className="flex gap-6 items-start animate-slide-up"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                                <div className="flex-shrink-0 w-20 text-center">
+                                    <div className="inline-flex p-3 bg-accent-light rounded-xl">
+                                        <Clock className="w-6 h-6 text-accent" />
+                                    </div>
+                                    <p className="text-heading-xs text-primary mt-2 font-bold">
+                                        {item.year}
+                                    </p>
+                                </div>
+                                <Card className="flex-1 border-0 shadow-md">
+                                    <CardContent className="p-6">
+                                        <p className="text-body-medium">
+                                            {item.event}
+                                        </p>
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

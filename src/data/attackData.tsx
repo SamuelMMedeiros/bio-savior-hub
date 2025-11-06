@@ -10,6 +10,12 @@ export interface AttackData {
     fill: string;
 }
 
+export interface center {
+    lat: number;
+    lng: number;
+    zoom: number;
+}
+
 export const ATTACK_DATA: AttackData[] = [
     {
         id: 1,
@@ -97,5 +103,5 @@ export const ATTACK_DATA: AttackData[] = [
 export const CITY_PATOS = {
     lat: -18.5789,
     lng: -46.5178,
-    zoom: 13
+    zoom: 13,
 };
