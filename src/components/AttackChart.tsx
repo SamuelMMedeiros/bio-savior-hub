@@ -12,9 +12,10 @@ import type { AttackData } from "../data/attackData";
 
 interface AttackChartProps {
     data: AttackData[];
+    onBairroClick?: (bairro: string) => void;
 }
 
-export function AttackChart({ data }: AttackChartProps) {
+export function AttackChart({ data, onBairroClick }: AttackChartProps) {
     const [isMobile, setIsMobile] = useState(
         typeof window !== "undefined" ? window.innerWidth < 640 : false
     );
@@ -25,6 +26,7 @@ export function AttackChart({ data }: AttackChartProps) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const CustomTooltip = ({ active, payload }: any) => {
         if (active && payload && payload.length) {
             const item = payload[0].payload;
@@ -63,6 +65,8 @@ export function AttackChart({ data }: AttackChartProps) {
                             name="Ataques"
                             fill="#16a34a"
                             radius={[6, 6, 0, 0]}
+                            onClick={(data) => onBairroClick?.(data.bairro)}
+                            className="cursor-pointer"
                         />
                     </BarChart>
                 </ResponsiveContainer>

@@ -32,8 +32,7 @@ import glossoophagaImage from "@/assets/glossophaga-soricina.jfif";
 import molossusImage from "@/assets/Molossus molossus.jpeg";
 import macrotisImage from "@/assets/Nyctinomops macrotis.jpeg";
 import peropterysImage from "@/assets/Peropteryx macrotis.jpeg";
-import { AttackChart } from "@/components/AttackChart";
-import { ATTACK_DATA, AttackData } from "@/data/attackData";
+import { AttackDashboard } from "@/components/AttackDashboard";
 
 const FEATURE_MAP: {
     [key: string]: { title: string; icon: React.ElementType; color: string };
@@ -458,7 +457,7 @@ const OutrosAnimais = () => {
                 </div>
             </section>
 
-            {/* Attack Chart Section */}
+            {/* Attack Chart and Map Section */}
             <section className="py-20 bg-muted/30">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-8 animate-fade-in">
@@ -473,34 +472,7 @@ const OutrosAnimais = () => {
                     </div>
 
                     <div className="bg-card rounded-2xl shadow-lg p-6 animate-scale-in">
-                        <AttackChart data={ATTACK_DATA} />
-                    </div>
-                </div>
-            </section>
-
-            {/* Interactive Map */}
-            <section className="py-20 bg-muted/30">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="text-center mb-8 animate-fade-in">
-                        <h2 className="text-heading-m text-primary mb-4">
-                            Distribuição Geográfica
-                        </h2>
-                        <p className="text-body-large text-muted-foreground">
-                            Veja onde esses animais podem ser encontrados
-                        </p>
-                    </div>
-
-                    <div className="rounded-2xl overflow-hidden shadow-lg h-[500px] animate-scale-in">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.174562724508!2d-46.515188725985794!3d-18.566167197290277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8b336d9068c1%3A0xce40462b1302bffb!2sCentro%20de%20Controle%20de%20Zoonoses!5e0!3m2!1spt-BR!2sbr!4v1762138346175!5m2!1spt-BR!2sbr"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Mapa de distribuição de animais"
-                        />
+                        <AttackDashboard />
                     </div>
                 </div>
             </section>
