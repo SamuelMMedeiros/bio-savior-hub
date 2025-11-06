@@ -32,6 +32,8 @@ import glossoophagaImage from "@/assets/glossophaga-soricina.jfif";
 import molossusImage from "@/assets/Molossus molossus.jpeg";
 import macrotisImage from "@/assets/Nyctinomops macrotis.jpeg";
 import peropterysImage from "@/assets/Peropteryx macrotis.jpeg";
+import { AttackChart } from "@/components/AttackChart";
+import { ATTACK_DATA, AttackData } from "@/data/attackData";
 
 const FEATURE_MAP: {
     [key: string]: { title: string; icon: React.ElementType; color: string };
@@ -453,6 +455,26 @@ const OutrosAnimais = () => {
                             {/* FIM DA IMPLEMENTAÇÃO DO MODAL */}
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* Attack Chart Section */}
+            <section className="py-20 bg-muted/30">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-8 animate-fade-in">
+                        <h2 className="text-heading-m text-primary mb-4">
+                            Casos de Ataques por Bairro
+                        </h2>
+                        <p className="text-body-large text-muted-foreground">
+                            Dados registrados de ocorrências em diferentes
+                            bairros em Patos de Minas/ MG entre os anos de 2021
+                            e 2025.
+                        </p>
+                    </div>
+
+                    <div className="bg-card rounded-2xl shadow-lg p-6 animate-scale-in">
+                        <AttackChart data={ATTACK_DATA} />
+                    </div>
                 </div>
             </section>
 
