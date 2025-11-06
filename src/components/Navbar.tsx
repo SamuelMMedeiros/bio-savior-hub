@@ -10,7 +10,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "Início", path: "/" },
         { name: "Sobre", path: "/sobre" },
-        { name: "Outros Animais", path: "/outros-animais" },
+        { name: "Galeria", path: "/galeria" },
         { name: "Contato", path: "/contato" },
     ];
 

@@ -67,7 +67,7 @@ const FEATURE_MAP: {
     },
 };
 
-const OutrosAnimais = () => {
+const Galeria = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -217,20 +217,47 @@ const OutrosAnimais = () => {
 
     const faqs = [
         {
-            question: "O que fazer em caso de acidente com animal peçonhento?",
-            answer: "Procure atendimento médico imediatamente. Ligue para o SAMU (192) e não tente fazer curativos caseiros. Mantenha a calma e, se possível, fotografe o animal para identificação.",
+            question:
+                "Encontrei um morcego caído no chão (vivo ou morto). O que devo fazer?",
+            answer: [
+                "Ação Imediata: Não toque no animal em hipótese alguma. Um morcego no chão ou voando durante o dia está quase sempre doente, ferido ou desorientado.",
+                "Isolamento: Isole o local para impedir que crianças, cães ou gatos se aproximem ou toquem no morcego.",
+                "Acione o CCZ: Ligue imediatamente para o Centro de Controle de Zoonoses de Patos de Minas: (34) 3822-9624. O CCZ fará o recolhimento seguro e o encaminhamento para análise laboratorial para raiva.",
+            ],
         },
         {
-            question: "Como prevenir acidentes com animais peçonhentos?",
-            answer: "Use calçados fechados em áreas de risco, verifique roupas e calçados antes de usar, mantenha jardins limpos, vede frestas e buracos em paredes e mantenha ambientes organizados.",
+            question:
+                "Há um morcego voando dentro da minha casa. Como devo tirá-lo?",
+            answer: [
+                "Não use vassouras ou objetos: Tentar afastar o morcego pode assustá-lo e causar um acidente.",
+                "Oriente a saída: Apague as luzes internas e abra portas e janelas que dão para o exterior. O morcego, que usa a ecolocalização, será atraído pela escuridão externa e pela corrente de ar.",
+                "Caso persista: Se ele pousar e não sair, cubra-o cuidadosamente (usando luvas grossas e um pote) e chame o CCZ para o manejo adequado.",
+            ],
         },
         {
-            question: "Todos os morcegos são perigosos?",
-            answer: "Não. A maioria dos morcegos são inofensivos e desempenham papel importante no ecossistema. Apenas algumas espécies se alimentam de sangue, e raramente atacam humanos.",
+            question:
+                "Como posso saber se tem morcegos morando no meu forro (sotão)?",
+            answer: [
+                "Sinais de Fezes (Guano): Procure acúmulos de pequenas bolinhas pretas (fezes), geralmente próximos a frestas ou buracos por onde eles saem.",
+                "Cheiro: O acúmulo de guano (fezes) e urina pode gerar um cheiro forte e característico.",
+                "Sons: Morcegos, principalmente da família Molossidae (a mais comum em Patos de Minas), costumam se abrigar em forros de residências.",
+            ],
         },
         {
-            question: "Como identificar uma serpente peçonhenta?",
-            answer: "Serpentes peçonhentas geralmente têm cabeça triangular, fosseta loreal (entre olho e narina), pupilas em fenda vertical e comportamento defensivo. Em caso de dúvida, mantenha distância.",
+            question: "As fezes de morcegos (guano) representam algum risco?",
+            answer: [
+                "Sim, representam risco: O guano acumulado em locais fechados e úmidos, como forros ou sótãos, pode conter fungos.",
+                "Prevenção: Se for limpar o local, nunca varra as fezes a seco. Use uma máscara de proteção e borrife água antes de remover o material, para evitar inalar os fungos.",
+                "Melhor Solução: Se for um grande acúmulo, chame o CCZ para orientação sobre a desinfecção e o fechamento do abrigo.",
+            ],
+        },
+        {
+            question: "Morcegos atacam? Eles querem meu sangue?",
+            answer: [
+                "Mito desmentido: As espécies mais comuns e recorrentes em Patos de Minas são insetívoras (comem insetos) ou frugívoras (comem frutas).",
+                "Função Ecológica: Eles não têm interesse em humanos; na verdade, são cruciais no controle de populações de insetos e na dispersão de sementes.",
+                "O Risco é a Raiva: O risco não está no 'ataque', mas sim no contato com um animal doente (com raiva), que morde por defesa.",
+            ],
         },
     ];
 
@@ -586,7 +613,11 @@ const OutrosAnimais = () => {
                                         </span>
                                     </AccordionTrigger>
                                     <AccordionContent className="px-6 pb-4 text-body-medium text-muted-foreground">
-                                        {faq.answer}
+                                        <ul className="list-disc pl-6 space-y-2">
+                                            {faq.answer.map((item, i) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ul>
                                     </AccordionContent>
                                 </AccordionItem>
                             ))}
@@ -598,4 +629,4 @@ const OutrosAnimais = () => {
     );
 };
 
-export default OutrosAnimais;
+export default Galeria;

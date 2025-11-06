@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import OutrosAnimais from "./pages/OutrosAnimais";
+import Galeria from "./pages/Galeria";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
@@ -27,10 +27,7 @@ const App = () => (
                             <Route path="/" element={<Home />} />
                             <Route path="/sobre" element={<About />} />
                             <Route path="/contato" element={<Contact />} />
-                            <Route
-                                path="/outros-animais"
-                                element={<OutrosAnimais />}
-                            />
+                            <Route path="/galeria" element={<Galeria />} />
                             <Route path="/admin" element={<Admin />} />
                             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                             <Route path="*" element={<NotFound />} />
