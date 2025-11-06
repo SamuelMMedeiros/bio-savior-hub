@@ -208,7 +208,7 @@ const Home = () => {
                         convivência harmoniosa com a natureza
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/outros-animais">
+                        <Link to="/galeria">
                             <Button className="btn-hero">
                                 Explorar Galeria
                                 <ArrowRight className="ml-2 w-5 h-5" />
