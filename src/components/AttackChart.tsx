@@ -24,6 +24,20 @@ export function AttackChart({ data }: AttackChartProps) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const CustomTooltip = ({ active, payload }: any) => {
+        if (active && payload && payload.length) {
+            const item = payload[0].payload;
+            return (
+                <div className="bg-white border border-green-200 rounded-lg p-2 shadow-sm text-sm">
+                    <p className="font-medium text-green-900">{item.bairro}</p>
+                    <p className="text-green-600">Ataques: {item.ataques}</p>
+                </div>
+            );
+        }
+        return null;
+    };
+
     return (
         <div className="w-full h-[300px] max-w-full mx-auto sm:max-w-none sm:mx-0">
             <ResponsiveContainer width="100%" height="100%">
@@ -41,6 +55,7 @@ export function AttackChart({ data }: AttackChartProps) {
                     <YAxis />
                     <Tooltip
                         cursor={{ fill: "rgba(0,0,0,0.05)" }}
+                        content={<CustomTooltip />}
                         wrapperStyle={{
                             visibility: isMobile ? "visible" : "hidden",
                             pointerEvents: "none",
