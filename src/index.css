@@ -9,11 +9,11 @@ All colors MUST be HSL.
 @layer base {
     :root {
         /* Brand Colors - Natural Palette */
-        --primary: 132 57% 26%; /* #2E6221 - Verde profundo */
+        --primary: 300 57% 26%; /* #2E6221 - Verde profundo */
         --primary-foreground: 0 0% 100%;
-        --primary-light: 132 57% 40%; /* Verde mais claro para hover */
+        --primary-light: 300 57% 40%; /* Verde mais claro para hover */
 
-        --secondary: 132 61% 6%; /* #1A400E - Verde escuro */
+        --secondary: 300 61% 6%; /* #1A400E - Verde escuro */
         --secondary-foreground: 0 0% 100%;
 
         --accent: 131 52% 36%; /* #2D8A35 - Verde médio */
@@ -22,21 +22,21 @@ All colors MUST be HSL.
 
         /* Neutral & Background */
         --background: 0 0% 100%; /* #FFFFFF */
-        --foreground: 132 7% 22%; /* #343E32 - Texto escuro natural */
+        --foreground: 300 7% 22%; /* #343E32 - Texto escuro natural */
 
         --card: 0 0% 100%;
-        --card-foreground: 132 7% 22%;
+        --card-foreground: 300 7% 22%;
 
         --popover: 0 0% 100%;
-        --popover-foreground: 132 7% 22%;
+        --popover-foreground: 300 7% 22%;
 
         /* UI Elements */
         --muted: 105 78% 95%; /* Verde muito claro */
-        --muted-foreground: 132 7% 45%;
+        --muted-foreground: 300 7% 45%;
 
         --border: 105 30% 85%;
         --input: 105 30% 90%;
-        --ring: 132 57% 26%;
+        --ring: 300 57% 26%;
 
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 100%;
@@ -46,12 +46,12 @@ All colors MUST be HSL.
         /* Gradients */
         --gradient-primary: linear-gradient(
             135deg,
-            hsl(132 57% 26%) 0%,
+            hsl(300 57% 26%) 0%,
             hsl(131 52% 36%) 100%
         );
         --gradient-hero: linear-gradient(
             180deg,
-            hsl(132 57% 26% / 0.9) 0%,
+            hsl(300 57% 26% / 0.9) 0%,
             hsl(131 52% 36% / 0.95) 100%
         );
         --gradient-accent: linear-gradient(

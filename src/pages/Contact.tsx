@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import ContactForm from "@/components/ContactForm";
@@ -8,8 +9,8 @@ const Contact = () => {
         {
             icon: Mail,
             title: "E-mail",
-            content: "contato@biostats.com",
-            link: "mailto:contato@biostats.com",
+            content: "saude.zoonoses@patosdeminas.mg.gov.br",
+            link: "mailto:saude.zoonoses@patosdeminas.mg.gov.br",
         },
         {
             icon: Phone,
@@ -20,7 +21,8 @@ const Contact = () => {
         {
             icon: MapPin,
             title: "Localização",
-            content: "Patos de Minas/MG, Brasil",
+            content:
+                "R. Maj. Gote, 1748 - Alto dos Caicaras, Patos de Minas - MG, 38700-001",
         },
         {
             icon: Clock,
@@ -46,8 +48,8 @@ const Contact = () => {
                         Entre em Contato
                     </h1>
                     <p className="text-body-large text-white/90 max-w-2xl mx-auto">
-                        Estamos aqui para responder suas dúvidas sobre animais
-                        peçonhentos
+                        Estamos aqui para responder suas dúvidas sobre morcegos
+                        e outros animais peçonhentos
                     </p>
                 </div>
             </section>
@@ -112,9 +114,10 @@ const Contact = () => {
                                         Precisa de Ajuda Imediata?
                                     </h3>
                                     <p className="text-body-medium text-muted-foreground mb-4">
-                                        Em caso de acidente com animal
-                                        peçonhento, procure atendimento médico
-                                        imediatamente. Ligue para:
+                                        Em caso de acidente com morcegos ou
+                                        qualquer animal peçonhento, procure
+                                        atendimento médico imediatamente. Ligue
+                                        para:
                                     </p>
                                     <div className="bg-background p-4 rounded-xl">
                                         <p className="text-heading-s text-destructive font-bold text-center">
@@ -136,7 +139,7 @@ const Contact = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-8 animate-fade-in">
                         <h2 className="text-heading-m text-primary mb-4">
-                            Nossa Localização
+                            Encontre a Zoonoses mais próxima
                         </h2>
                         <p className="text-body-large text-muted-foreground">
                             Encontre-nos em Patos de Minas-MG, Brasil
@@ -164,7 +167,8 @@ const Contact = () => {
                     <h2 className="text-heading-l mb-4">Dúvidas Frequentes?</h2>
                     <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
                         Confira nossa seção de perguntas frequentes na página de
-                        Outros Animais para encontrar respostas rápidas
+                        <Link to="/Galeria" className="font-bold"> Galeria</Link> para encontrar
+                        respostas rápidas
                     </p>
                 </div>
             </section>
