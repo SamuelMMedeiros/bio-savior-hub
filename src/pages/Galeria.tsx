@@ -301,7 +301,7 @@ const Galeria = () => {
                         Galeria de Animais
                     </h1>
                     <p className="text-body-large text-white/90 max-w-2xl mx-auto">
-                        Conheça a diversidade de animais peçonhentos do Brasil
+                        Conheça os morcegos mais comuns em Patos de Minas/MG
                     </p>
                 </div>
             </section>
@@ -591,7 +591,7 @@ const Galeria = () => {
                             Perguntas Frequentes
                         </h2>
                         <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
-                            Tire suas dúvidas sobre animais peçonhentos
+                            Tire suas dúvidas sobre morcegos
                         </p>
                     </div>
 
