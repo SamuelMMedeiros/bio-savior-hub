@@ -45,9 +45,10 @@ exports.handler = async (event) => {
             html: `
         <div style="font-family: Arial, sans-serif; padding: 16px; text-align:center;">
           <img src="https://biostatsbat.netlify.app/logo.png" alt="Logo" width="100" />
-          <h2 style="color: #2e6221;">Olá, ${name}!</h2>
+          <h2 style="color: #681d68;">Olá, ${name}!</h2>
           <p>Recebemos sua mensagem e nossa equipe da Zoonoses entrará em contato em breve.</p>
-          <p style="color:#777; font-size:14px;">Obrigado por se interessar pela saúde e bem-estar dos animais! 🐾</p>
+          <p style="color:#642C64
+; font-size:14px;">Obrigado por se interessar pela saúde e bem-estar dos animais! 🐾</p>
         </div>
       `,
         });
