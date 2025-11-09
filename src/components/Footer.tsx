@@ -1,6 +1,6 @@
 import { Leaf, Facebook, Instagram, Twitter, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import Logo from "../../public/Logo.png";
+import Logo from "@/assets/logo.png";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();

@@ -41,7 +41,7 @@ export const handler = async (event) => {
             subject: "Recebemos sua mensagem 🦇",
             html: `
         <div style="font-family: Arial, sans-serif; padding: 16px; text-align:center;">
-          <img src="https://biostatsbat.netlify.ap/logo.png" alt="Logo" width="100" />
+          <img src="https://biostatsbat.netlify.app/logo.png" alt="Logo" width="100" />
           <h2 style="color: #2e6221;">Olá, ${name}!</h2>
           <p>Recebemos sua mensagem e nossa equipe da Zoonoses entrará em contato em breve.</p>
           <p style="color:#777; font-size:14px;">Obrigado por se interessar pela saúde e bem-estar dos animais! 🐾</p>
