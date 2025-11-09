@@ -44,7 +44,6 @@ exports.handler = async (event) => {
             subject: "Recebemos sua mensagem 🦇",
             html: `
         <div style="font-family: Arial, sans-serif; padding: 16px; text-align:center;">
-          // CORREÇÃO: Corrigido o typo de .ap para .app
           <img src="https://biostatsbat.netlify.app/logo.png" alt="Logo" width="100" />
           <h2 style="color: #2e6221;">Olá, ${name}!</h2>
           <p>Recebemos sua mensagem e nossa equipe da Zoonoses entrará em contato em breve.</p>
