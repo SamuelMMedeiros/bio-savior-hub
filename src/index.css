@@ -16,9 +16,9 @@ All colors MUST be HSL.
         --secondary: 300 61% 6%; /* #1A400E - Verde escuro */
         --secondary-foreground: 0 0% 100%;
 
-        --accent: 131 52% 36%; /* #2D8A35 - Verde médio */
+        --accent: 270 52% 36%; /* #2D8A35 - Verde médio */
         --accent-foreground: 0 0% 100%;
-        --accent-light: 105 78% 85%; /* #C3F1BB - Verde claro suave */
+        --accent-light: 270 78% 85%; /* #C3F1BB - Verde claro suave */
 
         /* Neutral & Background */
         --background: 0 0% 100%; /* #FFFFFF */
