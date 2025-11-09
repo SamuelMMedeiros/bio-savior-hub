@@ -1,4 +1,4 @@
-import { Target, Eye, Heart, Users, Award } from "lucide-react";
+import { Target, Eye, Heart, Users, Award, FileDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import heroImage from "@/assets/hero-forest.jpg";
@@ -89,7 +89,6 @@ const About = () => {
                     </p>
                 </div>
             </section>
-
             {/* Mission, Vision, Values */}
             <section className="py-20">
                 <div className="container mx-auto px-4 sm:px-6">
@@ -116,7 +115,6 @@ const About = () => {
                     </div>
                 </div>
             </section>
-
             {/* Our Team */}
             <section className="py-20 bg-muted/30">
                 <div className="container mx-auto px-4 sm:px-6">
@@ -165,6 +163,31 @@ const About = () => {
                 </div>
             </section>
 
+            {/* Seção de Download */}
+            <section className="relative py-20 bg-background border-t border-border animate-fade-in">
+                <div className="container mx-auto px-4 sm:px-6 text-center">
+                    <h2 className="text-heading-l text-foreground mb-6">
+                        Baixe o Conteúdo Completo
+                    </h2>
+                    <p className="text-body-large text-muted-foreground max-w-2xl mx-auto mb-10">
+                        Este documento reúne todas as informações e referências
+                        utilizadas na criação dos textos e orientações do site.
+                        Faça o download gratuito para aprender mais sobre o
+                        papel dos morcegos, prevenção da raiva e práticas
+                        corretas de convivência.
+                    </p>
+
+                    <a
+                        href="/downloads/base-conteudo.pdf"
+                        download
+                        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-2xl font-medium shadow-md hover:bg-primary/90 transition-colors"
+                    >
+                        <FileDown size={20} />
+                        Baixar Documento em PDF
+                    </a>
+                </div>
+            </section>
+            
             {/* Join Us CTA */}
             <section className="py-20 bg-gradient-primary text-primary-foreground">
                 <div className="container mx-auto px-4 sm:px-6 text-center animate-fade-in">
@@ -177,57 +200,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <section className="py-20 bg-muted/30">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="text-center mb-12 animate-fade-in">
-                        <h2 className="text-heading-l text-primary mb-4">
-                            O Que Dizem Sobre Nós
-                        </h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                name: "Maria Eduarda",
-                                role: "Professora de Biologia",
-                                text: "Material excepcional para uso em sala de aula. Os alunos adoram!",
-                            },
-                            {
-                                name: "Pedro Henrique",
-                                role: "Pesquisador",
-                                text: "Informações científicas precisas e acessíveis. Recomendo muito!",
-                            },
-                            {
-                                name: "Júlia Costa",
-                                role: "Estudante de Ciências",
-                                text: "O BioStats me ajudou muito no meu TCC sobre biodiversidade.",
-                            },
-                        ].map((testimonial, index) => (
-                            <Card
-                                key={index}
-                                className="border-0 shadow-md animate-scale-in"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                                <CardContent className="p-8">
-                                    <p className="text-body-medium mb-4 italic">
-                                        "{testimonial.text}"
-                                    </p>
-                                    <div className="border-t pt-4">
-                                        <p className="text-body-medium font-semibold">
-                                            {testimonial.name}
-                                        </p>
-                                        <p className="text-body-small text-muted-foreground">
-                                            {testimonial.role}
-                                        </p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            <ScrollToTopButton/>
+            <ScrollToTopButton />
         </div>
     );
 };
