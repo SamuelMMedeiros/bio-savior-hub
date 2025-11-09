@@ -17,7 +17,7 @@ export const handler = async (event) => {
 
         // Mensagem que a Zoonoses vai receber
         const mailOptions = {
-            from: `"Portal de Zoonoses" <${process.env.SMTP_USER}>`,
+            from: `"Bio Stats Bat" <${process.env.SMTP_USER}>`,
             to: "saude.zoonozes@patosdeminas.mg.gov.br",
             subject: `Nova mensagem de ${name}`,
             html: `
@@ -36,14 +36,14 @@ export const handler = async (event) => {
 
         // Mensagem automática pro remetente
         await transporter.sendMail({
-            from: `"Zoonoses Patos de Minas" <${process.env.SMTP_USER}>`,
+            from: `"Bio Stats Bat" <${process.env.SMTP_USER}>`,
             to: email,
             subject: "Recebemos sua mensagem 🦇",
             html: `
         <div style="font-family: Arial, sans-serif; padding: 16px; text-align:center;">
           <img src="https://biostatsbat.netlify.app/logo.png" alt="Logo" width="100" />
           <h2 style="color: #2e6221;">Olá, ${name}!</h2>
-          <p>Recebemos sua mensagem e nossa equipe da Zoonoses entrará em contato em breve.</p>
+          <p>Recebemos sua mensagem e a equipe da Zoonoses entrará em contato em breve.</p>
           <p style="color:#777; font-size:14px;">Obrigado por se interessar pela saúde e bem-estar dos animais! 🐾</p>
         </div>
       `,
