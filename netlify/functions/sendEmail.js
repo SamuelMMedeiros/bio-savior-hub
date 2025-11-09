@@ -1,94 +1,63 @@
 import nodemailer from "nodemailer";
 
 export const handler = async (event) => {
-    if (event.httpMethod !== "POST") {
-        return { statusCode: 405, body: "Method not allowed" };
-    }
-
     try {
         const { name, email, message } = JSON.parse(event.body);
 
-        // transporter para envio
+        // Configuração segura usando variáveis de ambiente do Netlify
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
+            host: process.env.SMTP_HOST,
+            port: process.env.SMTP_PORT,
+            secure: true, // true para 465
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
             },
         });
 
-        // Email para Zoonoses
-        const emailToZoonoses = {
-            from: `"Viva com os Morcegos" <${process.env.EMAIL_USER}>`,
-            to: process.env.EMAIL_TO,
-            subject: `📩 Novo contato de ${name}`,
-            replyTo: email,
+        // Mensagem que a Zoonoses vai receber
+        const mailOptions = {
+            from: `"Portal de Zoonoses" <${process.env.SMTP_USER}>`,
+            to: "saude.zoonozes@patosdeminas.mg.gov.br",
+            subject: `Nova mensagem de ${name}`,
             html: `
-        <div style="font-family: Arial, sans-serif; color: #1f2937; background-color: #f9fafb; padding: 20px;">
-          <div style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <div style="background-color: #2E6221; padding: 20px; text-align: center;">
-              <img src="${
-                  process.env.SITE_URL
-              }/logo.png" alt="Logo Viva com os Morcegos" style="height: 60px;">
-            </div>
-            <div style="padding: 20px;">
-              <h2 style="color: #2E6221;">Nova mensagem recebida 🦇</h2>
-              <p><strong>Nome:</strong> ${name}</p>
-              <p><strong>E-mail:</strong> ${email}</p>
-              <p><strong>Mensagem:</strong></p>
-              <p style="background:#f0fdf4; padding: 12px; border-radius: 8px;">${message}</p>
-              <p style="font-size: 12px; color: #6b7280; margin-top: 20px;">Enviado em ${new Date().toLocaleString(
-                  "pt-BR"
-              )}</p>
-            </div>
-          </div>
+        <div style="font-family: Arial, sans-serif; padding: 16px;">
+          <img src="https://seusite.netlify.app/logo.png" alt="Logo" width="120" />
+          <h2 style="color: #2e6221;">📬 Nova mensagem recebida pelo site</h2>
+          <p><strong>Nome:</strong> ${name}</p>
+          <p><strong>E-mail:</strong> ${email}</p>
+          <p><strong>Mensagem:</strong></p>
+          <p style="background: #f4f4f4; padding: 10px; border-radius: 8px;">${message}</p>
         </div>
       `,
         };
 
-        // Email automático para o visitante
-        const emailAutoReply = {
-            from: `"Viva com os Morcegos" <${process.env.EMAIL_USER}>`,
+        await transporter.sendMail(mailOptions);
+
+        // Mensagem automática pro remetente
+        await transporter.sendMail({
+            from: `"Zoonoses Patos de Minas" <${process.env.SMTP_USER}>`,
             to: email,
-            subject: "🌿 Recebemos sua mensagem!",
+            subject: "Recebemos sua mensagem 🦇",
             html: `
-        <div style="font-family: Arial, sans-serif; color: #1f2937; background-color: #f9fafb; padding: 20px;">
-          <div style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <div style="background-color: #2E6221; padding: 20px; text-align: center;">
-              <img src="${process.env.SITE_URL}/logo.png" alt="Logo Viva com os Morcegos" style="height: 60px;">
-            </div>
-            <div style="padding: 20px;">
-              <h2 style="color: #2E6221;">Olá, ${name}! 🦇</h2>
-              <p>Ficamos muito felizes por sua mensagem! 🥰</p>
-              <p>Nosso time da <strong>Zoonoses</strong> vai analisar sua dúvida e responder em breve no e-mail <strong>${email}</strong>.</p>
-              <p>Enquanto isso, você pode visitar nosso site e aprender mais sobre esses incríveis guardiões noturnos da natureza 🌙.</p>
-              <div style="margin-top: 20px; text-align: center;">
-                <a href="${process.env.SITE_URL}" style="background-color:#2E6221; color:white; text-decoration:none; padding:12px 24px; border-radius:8px; display:inline-block;">Visitar o site</a>
-              </div>
-              <p style="font-size: 12px; color: #6b7280; margin-top: 30px;">Equipe Viva com os Morcegos<br/>Zoonoses Municipal</p>
-            </div>
-          </div>
+        <div style="font-family: Arial, sans-serif; padding: 16px; text-align:center;">
+          <img src="https://biostatsbat.netlify.ap/logo.png" alt="Logo" width="100" />
+          <h2 style="color: #2e6221;">Olá, ${name}!</h2>
+          <p>Recebemos sua mensagem e nossa equipe da Zoonoses entrará em contato em breve.</p>
+          <p style="color:#777; font-size:14px;">Obrigado por se interessar pela saúde e bem-estar dos animais! 🐾</p>
         </div>
       `,
-        };
-
-        await transporter.sendMail(emailToZoonoses);
-        await transporter.sendMail(emailAutoReply);
+        });
 
         return {
             statusCode: 200,
-            body: JSON.stringify({
-                success: true,
-                message: "E-mails enviados com sucesso!",
-            }),
+            body: JSON.stringify({ message: "E-mail enviado com sucesso" }),
         };
-    } catch (err) {
-        console.error(err);
+    } catch (error) {
+        console.error("Erro no envio:", error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ success: false, error: err.message }),
+            body: JSON.stringify({ error: "Falha ao enviar e-mail" }),
         };
     }
 };
