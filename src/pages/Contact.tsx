@@ -139,7 +139,7 @@ const Contact = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-8 animate-fade-in">
                         <h2 className="text-heading-m text-primary mb-4">
-                            Encontre a Zoonoses mais próxima
+                            Encontre o Centro de Controle de Zoonoses mais próximo
                         </h2>
                         <p className="text-body-large text-muted-foreground">
                             Encontre-nos em Patos de Minas-MG, Brasil
