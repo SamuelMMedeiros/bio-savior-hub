@@ -46,9 +46,9 @@ export default function Curiosidades() {
                 </div>
             </section>
 
-            {/* Curiosidades */}
+            {/* Fatos Interessantes */}
             <section className="container mx-auto px-4 sm:px-6 py-20 animate-fade-in">
-                <h2 className="text-heading-l text-center mb-12">
+                <h2 className="text-heading-l text-center text-foreground mb-12">
                     Fatos Interessantes
                 </h2>
                 <div className="grid gap-8 md:grid-cols-3">
@@ -61,7 +61,7 @@ export default function Curiosidades() {
                                 <div className="flex justify-center mb-6">
                                     <Icon className="w-12 h-12 text-primary" />
                                 </div>
-                                <h3 className="text-heading-s font-semibold mb-3">
+                                <h3 className="text-heading-s font-semibold text-foreground mb-3">
                                     {title}
                                 </h3>
                                 <p className="text-muted-foreground leading-relaxed">
@@ -78,12 +78,12 @@ export default function Curiosidades() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12 max-w-5xl">
                     {/* Introdução */}
                     <Card className="shadow-md border border-border">
-                        <CardContent className="p-6 sm:p-8 space-y-4 text-muted-foreground">
+                        <CardContent className="p-6 sm:p-8 space-y-4">
                             <h2 className="text-2xl font-semibold text-foreground">
                                 🦇 Mitos e Fatos: Por Que os Morcegos Urbanos
                                 Não Atacam Humanos
                             </h2>
-                            <p>
+                            <p className="text-muted-foreground">
                                 A maior parte do medo em relação aos morcegos
                                 deriva de mitos associados aos
                                 morcegos-vampiros. O fato é que as espécies
@@ -192,7 +192,6 @@ export default function Curiosidades() {
                                 🧭 Orientações e Prevenção
                             </h2>
 
-                            {/* Passo 1 */}
                             <div className="space-y-2">
                                 <h3 className="text-xl font-semibold text-foreground">
                                     🛑 Emergência: Fui Mordido por um Morcego. O
@@ -209,59 +208,74 @@ export default function Curiosidades() {
                             </div>
 
                             <div className="space-y-2">
-                                <h4 className="text-lg font-semibold text-foreground">
+                                <h4 className="text-lg font-semibold text-primary">
                                     Passo 1: Lave a Ferida Imediatamente
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    <strong>Ação:</strong> Lave o local da
-                                    mordida, arranhadura ou contato
-                                    abundantemente com água e sabão, por vários
-                                    minutos.
+                                    <strong className="text-foreground">
+                                        Ação:
+                                    </strong>{" "}
+                                    Lave o local da mordida, arranhadura ou
+                                    contato abundantemente com água e sabão, por
+                                    vários minutos.
                                     <br />
-                                    <strong>Importância:</strong> Essa é a
-                                    medida de primeiro socorro mais importante,
-                                    pois ajuda a inativar o vírus.
+                                    <strong className="text-foreground">
+                                        Importância:
+                                    </strong>{" "}
+                                    Essa é a medida de primeiro socorro mais
+                                    importante, pois ajuda a inativar o vírus.
                                 </p>
                             </div>
 
                             <div className="space-y-2">
-                                <h4 className="text-lg font-semibold text-foreground">
+                                <h4 className="text-lg font-semibold text-primary">
                                     Passo 2: Procure o Serviço de Saúde
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    <strong>Ação:</strong> Dirija-se
-                                    imediatamente à Unidade de Saúde ou Pronto
-                                    Atendimento mais próximo.
+                                    <strong className="text-foreground">
+                                        Ação:
+                                    </strong>{" "}
+                                    Dirija-se imediatamente à Unidade de Saúde
+                                    ou Pronto Atendimento mais próximo.
                                     <br />
-                                    <strong>Importância:</strong> Mesmo que o
-                                    ferimento pareça pequeno, um profissional
-                                    deve avaliar a necessidade de Profilaxia
-                                    Antirrábica Pós-Exposição (vacina e/ou
-                                    soro). A raiva é quase sempre letal em
-                                    humanos não tratados.
+                                    <strong className="text-foreground">
+                                        Importância:
+                                    </strong>{" "}
+                                    Mesmo que o ferimento pareça pequeno, um
+                                    profissional deve avaliar a necessidade de
+                                    Profilaxia Antirrábica Pós-Exposição. A
+                                    raiva é quase sempre letal em humanos não
+                                    tratados.
                                 </p>
                             </div>
 
                             <div className="space-y-2">
-                                <h4 className="text-lg font-semibold text-foreground">
+                                <h4 className="text-lg font-semibold text-primary">
                                     Passo 3: Acione o Centro de Controle de
                                     Zoonoses (CCZ)
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    <strong>Ação:</strong> Ligue para o CCZ de
-                                    Patos de Minas:{" "}
-                                    <strong>(34) 3822-9624</strong>.
+                                    <strong className="text-foreground">
+                                        Ação:
+                                    </strong>{" "}
+                                    Ligue para o CCZ de Patos de Minas:{" "}
+                                    <strong className="text-foreground">
+                                        (34) 3822-9624
+                                    </strong>
+                                    .
                                     <br />
-                                    <strong>Importância:</strong> O morcego
-                                    (vivo ou morto) envolvido no acidente deve
-                                    ser recolhido e encaminhado para análise
-                                    laboratorial, o que orienta as ações de
-                                    saúde pública.
+                                    <strong className="text-foreground">
+                                        Importância:
+                                    </strong>{" "}
+                                    O morcego (vivo ou morto) envolvido no
+                                    acidente deve ser recolhido e encaminhado
+                                    para análise laboratorial, o que orienta as
+                                    ações de saúde pública.
                                 </p>
                             </div>
 
                             <div className="space-y-2">
-                                <h4 className="text-lg font-semibold text-foreground">
+                                <h4 className="text-lg font-semibold text-primary">
                                     ⚠️ Lembre-se: Nunca Toque no Animal!
                                 </h4>
                                 <ul className="list-disc pl-6 text-muted-foreground space-y-2">
@@ -287,7 +301,7 @@ export default function Curiosidades() {
             {/* Orientações Finais */}
             <section className="relative py-20 bg-muted/30 border-t border-border animate-fade-in">
                 <div className="container mx-auto px-4 sm:px-6 text-center">
-                    <h2 className="text-heading-l mb-6">
+                    <h2 className="text-heading-l text-foreground mb-6">
                         Como Agir Corretamente
                     </h2>
                     <p className="text-body-large text-muted-foreground max-w-2xl mx-auto mb-10">
@@ -303,7 +317,8 @@ export default function Curiosidades() {
                     </Link>
                 </div>
             </section>
-            <ScrollToTopButton/>
+
+            <ScrollToTopButton />
         </div>
     );
 }
