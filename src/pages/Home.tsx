@@ -169,7 +169,7 @@ const Home = () => {
             icon: Shield,
             title: "Informação Confiável",
             description:
-                "Dados científicos verificados sobre animais peçonhentos e seus habitats.",
+                "Dados científicos verificados sobre morcegos e seus habitats.",
         },
         {
             icon: BookOpen,
@@ -298,7 +298,7 @@ const Home = () => {
                         </h2>
                         <p className="text-body-large text-muted-foreground max-w-2xl mx-auto">
                             Conheça algumas das espécies de morcegos mais comuns
-                            em Minas Gerais.
+                            em Patos de Minas/MG.
                         </p>
                     </div>
 
@@ -489,7 +489,7 @@ const Home = () => {
                     </h2>
                     <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
                         Entre em contato com o CCZ de Patos de Minas para mais
-                        informações sobre animais peçonhentos
+                        informações sobre morcegos.
                     </p>
                     <Link to="/contato">
                         <Button
