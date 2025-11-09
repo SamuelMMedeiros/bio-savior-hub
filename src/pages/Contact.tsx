@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import ContactForm from "@/components/ContactForm";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import heroImage from "@/assets/hero-forest.jpg";
 
 const Contact = () => {
@@ -177,6 +178,7 @@ const Contact = () => {
                     </p>
                 </div>
             </section>
+            <ScrollToTopButton/>
         </div>
     );
 };

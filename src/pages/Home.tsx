@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import {
     Shield,
     BookOpen,
@@ -502,6 +503,7 @@ const Home = () => {
                     </Link>
                 </div>
             </section>
+            <ScrollToTopButton/>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import {
     BookOpen,
     MapPin,
@@ -301,7 +302,9 @@ const Galeria = () => {
                         Galeria de Animais
                     </h1>
                     <p className="text-body-large text-white/90 max-w-2xl mx-auto">
-                        Conheça os morcegos mais comuns em Patos de Minas/MG
+                        Descubra os morcegos que habitam Patos de Minas e
+                        entenda como esses incríveis mamíferos alados ajudam a
+                        manter nossa cidade mais saudável e equilibrada.
                     </p>
                 </div>
             </section>
@@ -625,6 +628,7 @@ const Galeria = () => {
                     </div>
                 </div>
             </section>
+            <ScrollToTopButton/>
         </div>
     );
 };

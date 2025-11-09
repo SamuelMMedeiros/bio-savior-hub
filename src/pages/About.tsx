@@ -1,5 +1,6 @@
 import { Target, Eye, Heart, Users, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import heroImage from "@/assets/hero-forest.jpg";
 import mirianImage from "@/assets/user_pics/Mirian.jfif";
 import biancaImage from "@/assets/user_pics/Bianca.jfif";
@@ -226,6 +227,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <ScrollToTopButton/>
         </div>
     );
 };

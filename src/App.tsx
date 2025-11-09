@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Galeria from "./pages/Galeria";
 import Admin from "./pages/Admin";
+import Curiosities from "./pages/Curiosities"
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,9 +26,10 @@ const App = () => (
                     <main className="flex-1">
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/sobre" element={<About />} />
-                            <Route path="/contato" element={<Contact />} />
                             <Route path="/galeria" element={<Galeria />} />
+                            <Route path="/curiosities" element={<Curiosities />} />
+                            <Route path="/contato" element={<Contact />} />
+                            <Route path="/sobre" element={<About />} />
                             <Route path="/admin" element={<Admin />} />
                             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                             <Route path="*" element={<NotFound />} />
