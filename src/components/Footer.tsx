@@ -115,7 +115,7 @@ const Footer = () => {
                                 <Twitter className="w-5 h-5" />
                             </a>
                             <a
-                                href="mailto:contato@biostats.com"
+                                href="mailto:saude.zoonozes@patosdeminas.mg.gov.br"
                                 className="p-2 bg-accent/10 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all hover:-translate-y-1"
                                 aria-label="E-mail"
                             >
