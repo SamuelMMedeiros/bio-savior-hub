@@ -3,11 +3,10 @@
 [![Build Status](https://img.shields.io/badge/Status%20do%20Projeto-Em%20Desenvolvimento-blue)](URL_DO_SEU_STATUS_BUILD)
 [![Tecnologias](https://img.shields.io/badge/React%20%7C%20TypeScript-Frontend-informational)](https://pt.reactjs.org/)
 [![Estilo](https://img.shields.io/badge/Tailwind%20CSS-Design-blueviolet)](https://tailwindcss.com/)
-[![Licença](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ## 💡 Sobre o Projeto
 
-O **Bio-Savior-Hub** é uma plataforma de código aberto dedicada ao **monitoramento e conscientização** sobre a fauna silvestre em ambientes urbanos e rurais, com foco inicial em casos de interação com espécies de morcegos e outros animais peçonhentos na região de Patos de Minas (MG).
+O **Bio-Savior-Hub** é um site dedicado ao **monitoramento e conscientização** sobre a fauna silvestre em ambientes urbanos e rurais, com foco inicial em casos de interação com espécies de morcegos e outros animais peçonhentos na região de Patos de Minas (MG).
 
 Este projeto é desenvolvido com o apoio e a base científica de pesquisas realizadas em colaboração com o **UNIPAM - Centro Universitário de Patos de Minas**, visando transformar dados acadêmicos em ferramentas de utilidade pública e educação ambiental.
 
@@ -23,7 +22,7 @@ A colaboração com a instituição garante que os dados apresentados e o conte�
 
 ## ✨ Funcionalidades Principais
 
-* **Galeria Interativa (`OutrosAnimais.tsx`):**
+* **Galeria Interativa (`Galeria.tsx`):**
     * Exibição de informações detalhadas (dieta, comportamento, importância ecológica) de diversas espécies de fauna.
     * Filtros de pesquisa por tags (`Insetívoro`, `Urbano`, `Nectarívoro`, etc.).
 * **Painel de Estatísticas Geográficas:**
@@ -45,42 +44,6 @@ O projeto foi desenvolvido com uma *stack* moderna e eficiente:
 | **Visualização** | [Recharts](https://recharts.org/en-US/) | Biblioteca para renderização dos gráficos de dados. |
 | **Geolocalização** | [React-Leaflet](https://react-leaflet.js.org/) | Wrapper para a biblioteca de mapas interativos Leaflet. |
 | **Empacotador** | [Vite](https://vitejs.dev/) | Ferramenta de *build* e desenvolvimento rápida. |
-
-## 🚀 Como Executar o Projeto
-
-Siga os passos abaixo para ter uma cópia local do projeto rodando em sua máquina.
-
-### Pré-requisitos
-
-Certifique-se de ter o [Node.js](https://nodejs.org/en/) e um gerenciador de pacotes (npm, Yarn ou Bun) instalados.
-
-### Instalação
-
-1.  Clone o repositório:
-    ```bash
-    git clone [https://www.youtube.com/shorts/3mMG25WHLkU](https://www.youtube.com/shorts/3mMG25WHLkU)
-    cd bio-savior-hub
-    ```
-
-2.  Instale as dependências usando o Bun ou npm:
-    ```bash
-    # Usando Bun
-    bun install
-    
-    # Ou usando npm
-    npm install
-    ```
-
-3.  Inicie o servidor de desenvolvimento:
-    ```bash
-    # Usando Bun
-    bun dev
-    
-    # Ou usando npm
-    npm run dev
-    ```
-
-O aplicativo estará disponível em `http://localhost:5173` (ou porta similar, dependendo do Vite).
 
 ## 📚 Referências e Fontes de Dados
 
