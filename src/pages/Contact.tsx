@@ -56,15 +56,16 @@ const Contact = () => {
 
             {/* Contact Form & Info */}
             <section className="py-20">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="grid lg:grid-cols-2 gap-12">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Correção para layout mobile */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto w-full overflow-hidden px-2 sm:px-4">
                         {/* Contact Form */}
                         <div className="animate-slide-up">
                             <h2 className="text-heading-m text-primary mb-6">
                                 Envie uma Mensagem
                             </h2>
                             <Card className="border-0 shadow-lg">
-                                <CardContent className="p-8">
+                                <CardContent className="p-4 sm:p-8">
                                     <ContactForm />
                                 </CardContent>
                             </Card>
@@ -93,12 +94,12 @@ const Contact = () => {
                                                 {info.link ? (
                                                     <a
                                                         href={info.link}
-                                                        className="text-body-medium text-muted-foreground hover:text-accent transition-colors"
+                                                        className="text-body-medium text-muted-foreground hover:text-accent transition-colors break-words"
                                                     >
                                                         {info.content}
                                                     </a>
                                                 ) : (
-                                                    <p className="text-body-medium text-muted-foreground">
+                                                    <p className="text-body-medium text-muted-foreground break-words">
                                                         {info.content}
                                                     </p>
                                                 )}
@@ -139,7 +140,8 @@ const Contact = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-8 animate-fade-in">
                         <h2 className="text-heading-m text-primary mb-4">
-                            Encontre o Centro de Controle de Zoonoses mais próximo
+                            Encontre o Centro de Controle de Zoonoses mais
+                            próximo
                         </h2>
                         <p className="text-body-large text-muted-foreground">
                             Encontre-nos em Patos de Minas-MG, Brasil
@@ -167,8 +169,11 @@ const Contact = () => {
                     <h2 className="text-heading-l mb-4">Dúvidas Frequentes?</h2>
                     <p className="text-body-large mb-8 max-w-2xl mx-auto opacity-90">
                         Confira nossa seção de perguntas frequentes na página de
-                        <Link to="/Galeria" className="font-bold"> Galeria</Link> para encontrar
-                        respostas rápidas
+                        <Link to="/Galeria" className="font-bold">
+                            {" "}
+                            Galeria
+                        </Link>{" "}
+                        para encontrar respostas rápidas
                     </p>
                 </div>
             </section>
