@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "../../public/Logo.png"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +26,7 @@ const Navbar = () => {
                         to="/"
                         className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                     >
-                        <div className="bg-gradient-primary p-2 rounded-lg">
-                            <Leaf className="w-6 h-6 text-primary-foreground" />
-                        </div>
+                            <img src={Logo} alt="Logo da Biostats" className="h-16 w-auto"/>
                         <span className="text-heading-xs font-bold text-primary">
                             BioStats
                         </span>
