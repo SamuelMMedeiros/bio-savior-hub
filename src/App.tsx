@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -21,6 +22,7 @@ const App = () => (
             <Toaster />
             <Sonner />
             <BrowserRouter>
+                <ScrollToTop />
                 <div className="flex flex-col min-h-screen bg-white text-black dark:bg-gradient-to-b dark:from-[#0f0b1f] dark:to-[#1b1133] dark:text-white transition-colors duration-700">
                     <Navbar />
                     <main className="flex-1">
