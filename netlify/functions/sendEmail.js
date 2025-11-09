@@ -1,6 +1,8 @@
-import nodemailer from "nodemailer";
+// Use 'require' (CommonJS)
+const nodemailer = require("nodemailer");
 
-export const handler = async (event) => {
+// Use 'exports.handler'
+exports.handler = async (event) => {
     try {
         const { name, email, message } = JSON.parse(event.body);
 
@@ -18,11 +20,12 @@ export const handler = async (event) => {
         // Mensagem que a Zoonoses vai receber
         const mailOptions = {
             from: `"Bio Stats Bat" <${process.env.SMTP_USER}>`,
-            to: "saude.zoonozes@patosdeminas.mg.gov.br",
+            // CORREÇÃO: Usando a variável de ambiente
+            to: process.env.EMAIL_TO,
             subject: `Nova mensagem de ${name}`,
             html: `
         <div style="font-family: Arial, sans-serif; padding: 16px;">
-          <img src="https://seusite.netlify.app/logo.png" alt="Logo" width="120" />
+          <img src="https://biostatsbat.netlify.app/logo.png" alt="Logo" width="120" />
           <h2 style="color: #2e6221;">📬 Nova mensagem recebida pelo site</h2>
           <p><strong>Nome:</strong> ${name}</p>
           <p><strong>E-mail:</strong> ${email}</p>
@@ -41,9 +44,10 @@ export const handler = async (event) => {
             subject: "Recebemos sua mensagem 🦇",
             html: `
         <div style="font-family: Arial, sans-serif; padding: 16px; text-align:center;">
+          // CORREÇÃO: Corrigido o typo de .ap para .app
           <img src="https://biostatsbat.netlify.app/logo.png" alt="Logo" width="100" />
           <h2 style="color: #2e6221;">Olá, ${name}!</h2>
-          <p>Recebemos sua mensagem e a equipe da Zoonoses entrará em contato em breve.</p>
+          <p>Recebemos sua mensagem e nossa equipe da Zoonoses entrará em contato em breve.</p>
           <p style="color:#777; font-size:14px;">Obrigado por se interessar pela saúde e bem-estar dos animais! 🐾</p>
         </div>
       `,
