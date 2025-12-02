@@ -178,7 +178,7 @@ const About = () => {
                     </p>
 
                     <a
-                        href="/downloads/TECNOLOGIA E EDUCAÇÃO NA PREVENÇÃO DE ACIDENTES COM MORCEGOS EM ÁREAS URBANAS.pdf"
+                        href="/downloads/BioStats_TECNOLOGIA_E_EDUCAÇÃO_NA_PREVENÇÃO_DE_ACIDENTES_COM_MORCEGOS_EM_ÁREAS_URBANAS.pdf"
                         download
                         className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-2xl font-medium shadow-md hover:bg-primary/90 transition-colors"
                     >
