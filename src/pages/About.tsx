@@ -38,13 +38,6 @@ const About = () => {
             user_pic: biancaImage,
         },
         {
-            name: "Marcos Rausis",
-            role: "Estudante C. Biológicas",
-            description:
-                "Entusiasta da Zoologia com paixão por desvendar os mistérios da vida selvagem e da evolução.",
-            user_pic: marcosImage,
-        },
-        {
             name: "Maria Eduarda Cardoso",
             role: "Estudante C. Biológicas",
             description:
