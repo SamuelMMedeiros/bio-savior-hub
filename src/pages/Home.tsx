@@ -469,7 +469,7 @@ const Home = () => {
                     </div>
 
                     <div className="text-center">
-                        <Link to="/outros-animais">
+                        <Link to="/galeria">
                             <Button
                                 size="lg"
                                 className="rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90"
