@@ -10,7 +10,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Efeito para mudar o estilo da navbar ao rolar a página
+  // Controle de scroll para efeito de transparência
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -19,11 +19,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fecha o menu mobile ao trocar de rota
+  // Garante que o menu mobile feche ao clicar em um link
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
+  // Links baseados nas rotas definidas no seu App.tsx
   const navLinks = [
     { name: "Início", path: "/" },
     { name: "Sobre", path: "/about" },
@@ -43,7 +44,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo BioXplore - Samuel's Branding */}
+          {/* Logo BioXplore */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
               <Leaf className="h-6 w-6 text-primary" />
@@ -54,7 +55,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Navegação Desktop */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -72,13 +73,15 @@ const Navbar = () => {
             ))}
             <div className="flex items-center gap-2 pl-4 border-l border-border">
               <ThemeToggle />
-              <Button size="sm" className="bg-primary hover:bg-accent text-white rounded-full px-5">
-                Admin
-              </Button>
+              <Link to="/admin">
+                <Button size="sm" className="bg-primary hover:bg-accent text-white rounded-full px-5">
+                  Admin
+                </Button>
+              </Link>
             </div>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Toggle Mobile e Tema */}
           <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
             <button
@@ -92,7 +95,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Menu Mobile Aberto */}
       <div
         className={cn(
           "fixed inset-0 top-[65px] z-40 bg-background md:hidden transition-transform duration-300 ease-in-out",
@@ -112,9 +115,11 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Button className="w-full bg-primary mt-4">
-            Painel Administrativo
-          </Button>
+          <Link to="/admin" className="w-full">
+            <Button className="w-full bg-primary mt-4">
+              Painel Administrativo
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
