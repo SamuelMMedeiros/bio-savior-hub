@@ -2,67 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Definition of the design system baseado na imagem fornecida. */
 
 @layer base {
     :root {
-        /* Brand Colors - Natural Palette */
-        --primary: 300 57% 26%; 
-        --primary-foreground: 0 0% 100%;
-        --primary-light: 300 57% 40%; 
+        /* Brand Colors - Palette Neon/Tech */
+        --primary: 180 100% 50%; /* Ciano Neon */
+        --primary-foreground: 222.2 84% 4.9%;
+        --primary-light: 180 100% 70%; 
 
-        --secondary: 300 61% 6%; 
+        --secondary: 211 100% 50%; /* Azul Elétrico */
         --secondary-foreground: 0 0% 100%;
 
-        --accent: 270 52% 36%; 
-        --accent-foreground: 0 0% 100%;
-        --accent-light: 270 78% 85%;
+        --accent: 180 100% 50%; 
+        --accent-foreground: 222.2 84% 4.9%;
+        --accent-light: 180 100% 90%;
+
         /* Neutral & Background */
         --background: 0 0% 100%; 
-        --foreground: 300 7% 22%; 
+        --foreground: 222.2 84% 4.9%; 
 
         --card: 0 0% 100%;
-        --card-foreground: 300 7% 22%;
+        --card-foreground: 222.2 84% 4.9%;
 
         --popover: 0 0% 100%;
-        --popover-foreground: 300 7% 22%;
+        --popover-foreground: 222.2 84% 4.9%;
 
         /* UI Elements */
-        --muted: 105 78% 95%; /* Verde muito claro */
-        --muted-foreground: 300 7% 45%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
 
-        --border: 105 30% 85%;
-        --input: 105 30% 90%;
-        --ring: 300 57% 26%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 180 100% 50%;
 
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 100%;
 
-        --radius: 0.75rem; /* Bordas mais arredondadas */
+        --radius: 0.75rem;
 
-        /* Gradients */
+        /* Gradients baseados no Ciano e Azul */
         --gradient-primary: linear-gradient(
             135deg,
-            hsl(300, 56%, 26%) 0%,
-            hsl(131, 52%, 36%) 100%
+            hsl(180, 100%, 50%) 0%,
+            hsl(211, 100%, 50%) 100%
         );
         --gradient-hero: linear-gradient(
             180deg,
-            hsl(300 57% 26% / 0.9) 0%,
-            hsl(131 52% 36% / 0.95) 100%
+            hsl(0 0% 0% / 0.9) 0%,
+            hsl(211 100% 20% / 0.95) 100%
         );
         --gradient-accent: linear-gradient(
             135deg,
-            hsl(105 78% 85%) 0%,
-            hsl(105 78% 90%) 100%
+            hsl(180 100% 80%) 0%,
+            hsl(211 100% 80%) 100%
         );
 
-        /* Shadows */
-        --shadow-sm: 0 2px 8px hsl(300 57% 26% / 0.08);
-        --shadow-md: 0 4px 16px hsl(300 57% 26% / 0.12);
-        --shadow-lg: 0 8px 32px hsl(300 57% 26% / 0.16);
+        /* Shadows com tom azulado */
+        --shadow-sm: 0 2px 8px hsl(211 100% 50% / 0.08);
+        --shadow-md: 0 4px 16px hsl(211 100% 50% / 0.12);
+        --shadow-lg: 0 8px 32px hsl(211 100% 50% / 0.16);
 
         /* Transitions */
         --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,30 +69,32 @@ All colors MUST be HSL.
     }
 
     .dark {
-        --background:  61% 6%;
+        /* Fundo Preto Profundo da Imagem */
+        --background: 0 0% 0%;
         --foreground: 0 0% 95%;
 
-        --card:  57% 10%;
+        /* Superfícies em Grafite */
+        --card: 0 0% 7%;
         --card-foreground: 0 0% 95%;
 
-        --popover:  57% 10%;
+        --popover: 0 0% 5%;
         --popover-foreground: 0 0% 95%;
 
-        --primary: 131 52% 36%;
-        --primary-foreground: 0 0% 100%;
+        --primary: 180 100% 50%;
+        --primary-foreground: 222.2 47.4% 11.2%;
 
-        --secondary:  57% 15%;
+        --secondary: 211 100% 50%;
         --secondary-foreground: 0 0% 95%;
 
-        --muted:  57% 15%;
-        --muted-foreground:  7% 65%;
+        --muted: 0 0% 15%;
+        --muted-foreground: 0 0% 65%;
 
-        --accent: 105 78% 85%;
-        --accent-foreground:  57% 10%;
+        --accent: 180 100% 50%;
+        --accent-foreground: 0 0% 10%;
 
-        --border:  57% 20%;
-        --input:  57% 20%;
-        --ring: 131 52% 36%;
+        --border: 0 0% 20%;
+        --input: 0 0% 20%;
+        --ring: 180 100% 50%;
     }
 }
 
@@ -107,12 +108,7 @@ All colors MUST be HSL.
         font-family: "Roboto", sans-serif;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, h2, h3, h4, h5, h6 {
         @apply font-heading font-bold;
         font-family: "Roboto", sans-serif;
     }
@@ -138,21 +134,21 @@ All colors MUST be HSL.
     }
 
     .hover-lift:hover {
-        @apply -translate-y-1 shadow-lg;
+        @apply -translate-y-1 shadow-lg shadow-primary/20;
     }
 
     /* Card Styles */
     .card-nature {
-        @apply bg-card rounded-2xl shadow-md hover:shadow-lg transition-all duration-300;
+        @apply bg-card rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-border/50;
     }
 
     /* Button Variants via Utilities */
     .btn-hero {
-        @apply bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-8 py-4 font-semibold text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5;
+        @apply bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-8 py-4 font-semibold text-lg shadow-md hover:shadow-cyan-500/50 transition-all duration-300 hover:-translate-y-0.5;
     }
 
     .btn-outline-hero {
-        @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary rounded-full px-8 py-4 font-semibold text-lg transition-all duration-300;
+        @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8 py-4 font-semibold text-lg transition-all duration-300;
     }
 }
 
