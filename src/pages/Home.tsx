@@ -5,9 +5,6 @@ import {
     Shield,
     BookOpen,
     Users,
-    ArrowRight,
-    MapPin,
-    Tag,
     Search,
     BrainIcon,
     Leaf,
@@ -17,7 +14,7 @@ import {
     Zap
 } from "lucide-react";
 import AnimalCard from "@/components/AnimalCard";
-// Correção: Importações nomeadas conforme definido nos componentes originais
+// CORREÇÃO: Importações nomeadas com chaves {} para alinhar com a exportação dos componentes
 import { AttackDashboard } from "@/components/AttackDashboard";
 import { AttackMap } from "@/components/AttackMap";
 import { Card } from "@/components/ui/card";
@@ -30,140 +27,118 @@ import {
     DialogDescription,
 } from "@/components/ui/dialog";
 
-// Assets
+// Assets - Verificados de acordo com a estrutura do seu projeto
 import heroImage from "@/assets/hero-forest.jpg";
 import eumopsImage from "@/assets/Eumops glaucinus.jpeg";
 
 const Home = () => {
+    // Lista simplificada para garantir a renderização inicial
     const featuredAnimals = [
         {
             id: 1,
             name: "Morcego-de-cauda-livre",
             cientificName: "Eumops glaucinus",
             image: eumopsImage,
-            description: "Morcego insetívoro conhecido por seu voo alto e rápido. Controla populações de insetos.",
-            descriptionFull: {
-                feeding: "Insetos",
-                body: ["11-13 cm", "Cauda longa exposta", "Orelhas grandes"],
-                behavior: ["Voa alto", "Evita contato humano"],
-                importance: "Controle natural de mosquitos",
-                curiosities: ["Comum em cidades brasileiras"],
-                attacks: "20 casos registrados",
-            },
+            description: "Morcego insetívoro conhecido por seu voo alto e rápido. Ajuda no controle natural de pragas urbanas.",
             tags: ["Insetívoro", "Urbano"],
             location: "MG",
         }
     ];
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen bg-background">
             {/* Hero Section */}
-            <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
                 <div 
-                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105"
+                    className="absolute inset-0 z-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${heroImage})` }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-background" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-background" />
                 </div>
 
-                <div className="container relative z-10 px-4 text-center animate-fade-in">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">
-                        <span className="text-primary">Bio</span>
-                        <span className="text-white">Xplore</span>
+                <div className="container relative z-10 px-4 text-center">
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+                        <span className="text-primary">Bio</span>Xplore
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-light">
-                        Tecnologia e Ciência unidas para proteger a população e preservar a biodiversidade de Patos de Minas.
+                    <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                        Monitoramento e educação para a convivência segura com a fauna silvestre em Patos de Minas.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="bg-primary hover:bg-accent text-white rounded-full px-8 flex gap-2 text-lg">
-                            <Search className="h-5 w-5" /> Identificar com IA
+                        <Button size="lg" className="bg-primary hover:bg-accent rounded-full px-8">
+                            <Search className="mr-2 h-5 w-5" /> Identificar Animal
                         </Button>
                         <Link to="/about">
-                            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary rounded-full px-8 text-lg">
-                                Saiba Mais
+                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-black rounded-full px-8">
+                                Conhecer Projeto
                             </Button>
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Dashboard e Mapa */}
-            <section className="py-20 bg-background">
-                <div className="container px-4 mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-secondary mb-4">Monitoramento em Tempo Real</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
-                            Estatísticas de acidentes e avistamentos na nossa região.
-                        </p>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <Card className="p-4 shadow-xl border-primary/10">
+            {/* Monitoramento */}
+            <section className="py-16 container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                        <h2 className="text-3xl font-bold text-secondary">Estatísticas Locais</h2>
+                        <Card className="p-4 border-primary/20">
                             <AttackDashboard />
                         </Card>
-                        <Card className="p-0 overflow-hidden shadow-xl border-secondary/10 h-[500px]">
+                    </div>
+                    <div className="space-y-4">
+                        <h2 className="text-3xl font-bold text-secondary">Mapa de Ocorrências</h2>
+                        <Card className="p-0 overflow-hidden h-[400px] border-secondary/20">
                             <AttackMap />
                         </Card>
                     </div>
                 </div>
             </section>
 
-            {/* Features */}
-            <section className="py-20 bg-secondary/5">
-                <div className="container px-4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div className="flex flex-col items-center p-6 hover-lift">
-                        <div className="bg-primary/20 p-4 rounded-2xl mb-4 text-primary">
-                            <Zap className="h-8 w-8" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">Identificação Instantânea</h3>
-                        <p className="text-sm text-muted-foreground">Envie uma foto e nossa IA identifica o animal e o nível de risco em segundos.</p>
+            {/* Diferenciais */}
+            <section className="py-16 bg-secondary/5">
+                <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="text-center p-6">
+                        <Zap className="h-10 w-10 text-primary mx-auto mb-4" />
+                        <h3 className="font-bold text-xl mb-2">IA de Identificação</h3>
+                        <p className="text-muted-foreground">Tecnologia para reconhecimento rápido de espécies de risco.</p>
                     </div>
-
-                    <div className="flex flex-col items-center p-6 hover-lift">
-                        <div className="bg-primary/20 p-4 rounded-2xl mb-4 text-primary">
-                            <ShieldCheck className="h-8 w-8" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">Prevenção Educativa</h3>
-                        <p className="text-sm text-muted-foreground">Aprenda protocolos de segurança baseados em dados científicos.</p>
+                    <div className="text-center p-6">
+                        <ShieldCheck className="h-10 w-10 text-primary mx-auto mb-4" />
+                        <h3 className="font-bold text-xl mb-2">Protocolos Oficiais</h3>
+                        <p className="text-muted-foreground">Orientações baseadas em diretrizes de saúde pública.</p>
                     </div>
-
-                    <div className="flex flex-col items-center p-6 hover-lift">
-                        <div className="bg-primary/20 p-4 rounded-2xl mb-4 text-primary">
-                            <Users className="h-8 w-8" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">Comunidade</h3>
-                        <p className="text-sm text-muted-foreground">Conectamos cidadãos e pesquisadores para a conservação local.</p>
+                    <div className="text-center p-6">
+                        <Users className="h-10 w-10 text-primary mx-auto mb-4" />
+                        <h3 className="font-bold text-xl mb-2">Ciência Cidadã</h3>
+                        <p className="text-muted-foreground">Sua participação ajuda a mapear a biodiversidade local.</p>
                     </div>
                 </div>
             </section>
 
-            {/* Espécies */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-primary mb-12">Espécies em Destaque</h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {featuredAnimals.map((animal) => (
-                            <Dialog key={animal.id}>
-                                <DialogTrigger asChild>
-                                    <div className="cursor-pointer">
-                                        <AnimalCard {...animal} />
-                                    </div>
-                                </DialogTrigger>
-                                <DialogContent className="sm:max-w-[500px] p-0 overflow-hidden bg-card border-border">
-                                    <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${animal.image})` }} />
-                                    <div className="p-6">
-                                        <DialogHeader>
-                                            <DialogTitle className="text-2xl italic text-primary">{animal.cientificName}</DialogTitle>
-                                            <DialogDescription className="text-secondary font-bold">{animal.name}</DialogDescription>
-                                        </DialogHeader>
-                                        <div className="mt-4 space-y-4 text-sm">
-                                            <p>{animal.description}</p>
-                                        </div>
-                                    </div>
-                                </DialogContent>
-                            </Dialog>
-                        ))}
-                    </div>
+            {/* Espécies em Destaque */}
+            <section className="py-16 container mx-auto px-4">
+                <h2 className="text-3xl font-bold text-center mb-12">Fauna em Foco</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {featuredAnimals.map((animal) => (
+                        <Dialog key={animal.id}>
+                            <DialogTrigger asChild>
+                                <div className="cursor-pointer transition-transform hover:scale-105">
+                                    <AnimalCard {...animal} />
+                                </div>
+                            </DialogTrigger>
+                            <DialogContent className="bg-card">
+                                <DialogHeader>
+                                    <DialogTitle className="text-primary italic">{animal.cientificName}</DialogTitle>
+                                    <DialogDescription className="text-secondary font-semibold">
+                                        {animal.name}
+                                    </DialogDescription>
+                                </DialogHeader>
+                                <div className="mt-2 text-grafite">
+                                    <p>{animal.description}</p>
+                                </div>
+                            </DialogContent>
+                        </Dialog>
+                    ))}
                 </div>
             </section>
 
