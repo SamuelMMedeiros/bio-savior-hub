@@ -2,66 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system baseado na imagem fornecida. */
+/* Definition of the design system - Bio Savior Hub. 
+   Baseado na nova paleta: Verde (#2E7D32), Azul Petróleo (#0F4C5C) e Grafite (#2B2B2B).
+*/
 
 @layer base {
     :root {
-        /* Brand Colors - Palette Neon/Tech */
-        --primary: 180 100% 50%; /* Ciano Neon */
-        --primary-foreground: 222.2 84% 4.9%;
-        --primary-light: 180 100% 70%; 
+        /* Brand Colors - Paleta Institucional Samuel */
+        --primary: 123 46% 34%; /* Verde Principal #2E7D32 */
+        --primary-foreground: 0 0% 100%;
+        --primary-light: 123 46% 45%; 
 
-        --secondary: 211 100% 50%; /* Azul Elétrico */
+        --secondary: 192 72% 21%; /* Azul Petróleo #0F4C5C */
         --secondary-foreground: 0 0% 100%;
 
-        --accent: 180 100% 50%; 
-        --accent-foreground: 222.2 84% 4.9%;
-        --accent-light: 180 100% 90%;
+        --accent: 124 55% 24%; /* Verde Escuro #1B5E20 */
+        --accent-foreground: 0 0% 100%;
+        --accent-light: 124 55% 60%;
 
         /* Neutral & Background */
         --background: 0 0% 100%; 
-        --foreground: 222.2 84% 4.9%; 
+        --foreground: 0 0% 17%; /* Grafite #2B2B2B */
 
         --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
+        --card-foreground: 0 0% 17%;
 
         --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
+        --popover-foreground: 0 0% 17%;
 
         /* UI Elements */
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
+        --muted: 192 20% 96%;
+        --muted-foreground: 0 0% 40%;
 
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 180 100% 50%;
+        --border: 192 15% 90%;
+        --input: 192 15% 90%;
+        --ring: 123 46% 34%;
 
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 100%;
 
         --radius: 0.75rem;
 
-        /* Gradients baseados no Ciano e Azul */
+        /* Gradients: Transição do Verde para o Azul Petróleo */
         --gradient-primary: linear-gradient(
             135deg,
-            hsl(180, 100%, 50%) 0%,
-            hsl(211, 100%, 50%) 100%
+            hsl(123, 46%, 34%) 0%,
+            hsl(192, 72%, 21%) 100%
         );
         --gradient-hero: linear-gradient(
             180deg,
-            hsl(0 0% 0% / 0.9) 0%,
-            hsl(211 100% 20% / 0.95) 100%
+            hsl(192 72% 21% / 0.9) 0%,
+            hsl(188 78% 15% / 0.95) 100%
         );
         --gradient-accent: linear-gradient(
             135deg,
-            hsl(180 100% 80%) 0%,
-            hsl(211 100% 80%) 100%
+            hsl(124 55% 24%) 0%,
+            hsl(123 46% 34%) 100%
         );
 
-        /* Shadows com tom azulado */
-        --shadow-sm: 0 2px 8px hsl(211 100% 50% / 0.08);
-        --shadow-md: 0 4px 16px hsl(211 100% 50% / 0.12);
-        --shadow-lg: 0 8px 32px hsl(211 100% 50% / 0.16);
+        /* Shadows baseadas no Grafite/Azul Escuro */
+        --shadow-sm: 0 2px 8px hsl(188 78% 15% / 0.08);
+        --shadow-md: 0 4px 16px hsl(188 78% 15% / 0.12);
+        --shadow-lg: 0 8px 32px hsl(188 78% 15% / 0.16);
 
         /* Transitions */
         --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,32 +71,31 @@
     }
 
     .dark {
-        /* Fundo Preto Profundo da Imagem */
-        --background: 0 0% 0%;
+        /* Azul Escuro como fundo para contraste */
+        --background: 188 78% 10%; 
         --foreground: 0 0% 95%;
 
-        /* Superfícies em Grafite */
-        --card: 0 0% 7%;
+        --card: 188 78% 12%;
         --card-foreground: 0 0% 95%;
 
-        --popover: 0 0% 5%;
+        --popover: 188 78% 12%;
         --popover-foreground: 0 0% 95%;
 
-        --primary: 180 100% 50%;
-        --primary-foreground: 222.2 47.4% 11.2%;
+        --primary: 123 46% 45%; /* Verde um pouco mais claro no dark mode */
+        --primary-foreground: 0 0% 100%;
 
-        --secondary: 211 100% 50%;
+        --secondary: 192 72% 30%;
         --secondary-foreground: 0 0% 95%;
 
-        --muted: 0 0% 15%;
-        --muted-foreground: 0 0% 65%;
+        --muted: 188 50% 15%;
+        --muted-foreground: 0 0% 70%;
 
-        --accent: 180 100% 50%;
-        --accent-foreground: 0 0% 10%;
+        --accent: 124 55% 30%;
+        --accent-foreground: 0 0% 95%;
 
-        --border: 0 0% 20%;
-        --input: 0 0% 20%;
-        --ring: 180 100% 50%;
+        --border: 188 50% 20%;
+        --input: 188 50% 20%;
+        --ring: 123 46% 45%;
     }
 }
 
@@ -108,8 +109,9 @@
         font-family: "Roboto", sans-serif;
     }
 
+    /* Títulos usando Azul Petróleo Conforme Orientação */
     h1, h2, h3, h4, h5, h6 {
-        @apply font-heading font-bold;
+        @apply font-heading font-bold text-secondary;
         font-family: "Roboto", sans-serif;
     }
 }
@@ -124,17 +126,13 @@
         animation: slideUp 0.8s ease-out forwards;
     }
 
-    .animate-scale-in {
-        animation: scaleIn 0.5s ease-out forwards;
-    }
-
-    /* Hover Effects */
+    /* Hover Effects - Usando Verde Escuro */
     .hover-lift {
         @apply transition-all duration-300;
     }
 
     .hover-lift:hover {
-        @apply -translate-y-1 shadow-lg shadow-primary/20;
+        @apply -translate-y-1 shadow-lg border-primary/30;
     }
 
     /* Card Styles */
@@ -142,45 +140,27 @@
         @apply bg-card rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-border/50;
     }
 
-    /* Button Variants via Utilities */
+    /* Botões usando o Verde Principal */
     .btn-hero {
-        @apply bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-8 py-4 font-semibold text-lg shadow-md hover:shadow-cyan-500/50 transition-all duration-300 hover:-translate-y-0.5;
+        @apply bg-primary text-primary-foreground hover:bg-accent rounded-full px-8 py-4 font-semibold text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5;
     }
 
     .btn-outline-hero {
-        @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8 py-4 font-semibold text-lg transition-all duration-300;
+        @apply bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground rounded-full px-8 py-4 font-semibold text-lg transition-all duration-300;
     }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
