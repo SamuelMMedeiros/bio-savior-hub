@@ -27,10 +27,10 @@ const Navbar = () => {
   // Links corrigidos para baterem exatamente com as rotas do App.tsx
   const navLinks = [
     { name: "Início", path: "/" },
-    { name: "Sobre", path: "/about" },
+    { name: "Sobre", path: "/sobre" },
     { name: "Galeria", path: "/galeria" },
     { name: "Curiosidades", path: "/curiosities" },
-    { name: "Contato", path: "/contact" },
+    { name: "Contato", path: "/contato" },
   ];
 
   return (
