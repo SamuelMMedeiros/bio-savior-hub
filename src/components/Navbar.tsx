@@ -10,7 +10,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Controle de scroll para efeito de transparência
+  // Efeito para mudar o estilo da navbar ao rolar a página
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -19,17 +19,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Garante que o menu mobile feche ao clicar em um link
+  // Fecha o menu mobile ao trocar de rota
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
-  // Links baseados nas rotas definidas no seu App.tsx
+  // Links corrigidos para baterem exatamente com as rotas do App.tsx
   const navLinks = [
     { name: "Início", path: "/" },
     { name: "Sobre", path: "/about" },
     { name: "Galeria", path: "/galeria" },
-    { name: "Curiosidades", path: "/curiosidades" },
+    { name: "Curiosidades", path: "/curiosities" },
     { name: "Contato", path: "/contact" },
   ];
 
@@ -55,7 +55,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Navegação Desktop */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -81,7 +81,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Toggle Mobile e Tema */}
+          {/* Mobile Toggle */}
           <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
             <button
@@ -95,7 +95,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Menu Mobile Aberto */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
           "fixed inset-0 top-[65px] z-40 bg-background md:hidden transition-transform duration-300 ease-in-out",
@@ -115,7 +115,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/admin" className="w-full">
+          <Link to="/admin">
             <Button className="w-full bg-primary mt-4">
               Painel Administrativo
             </Button>
